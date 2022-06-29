@@ -1,0 +1,48 @@
+
+.detail-product{
+   
+    .card-img{    
+        margin-bottom: 10px;
+        height: 35vh;
+        object-fit: cover;
+        object-position: center center;    
+        
+        
+               
+    }
+    .card-body{           
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+        min-width: 100%;     
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: unset;  
+   
+
+-webkit-box-shadow: inset -2px -114px 45px -52px rgba(0,0,0,0.8);
+-moz-box-shadow: inset -2px -114px 45px -52px rgba(0,0,0,0.8);
+box-shadow: inset -2px -114px 45px -52px rgba(0,0,0,0.8);
+        .card-title{          
+             font-size: 25px;
+             font-weight: bold;
+            
+        }
+        .card-subtitle{ 
+            font-size: 20px;
+            font-weight: bold;
+        }       
+    }
+    .card-text{      
+        text-align: justify;
+        padding: 10px;
+    }
+
+    Button{
+        margin-top: 10px;
+    }
+
+}

@@ -1,0 +1,98 @@
+
+
+.table_admin{
+background-color: #6f6f6f45;
+box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+-webkit-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+-moz-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25); 
+  border-radius: 3PX;
+  height: 12rem;
+  border: solid 1px rgba(255, 255, 255, 0.608);
+
+
+   .head{
+       
+       display: flex;
+       justify-content: space-between;   
+    padding: 0 10px 0 10px;
+    background-color: rgb(77, 30, 27);
+    color: aliceblue;
+      label{
+          padding: 5px;
+          font-size: 20px;
+          width: 100%;
+     }
+}
+.cuenta{
+    
+    text-align: center;
+    background-color: yellow;
+    label{
+        color: black;
+        font-weight: bolder;
+    }
+}
+
+    article{     
+      
+        .icon-table{
+            display: flex;
+            justify-content: center;
+            svg{
+                color: rgba(255, 255, 255, 0.725);
+                
+            }
+        }
+        
+       .pendiente{
+           text-align: center;
+           color: yellowgreen;
+       }
+    }
+
+    &:hover{
+        transform: translateY(-5px);
+        transition: all .1s ease-in-out;
+    }
+
+   
+
+   .orders{      
+     
+   }
+
+    svg{       
+        //  padding:5px;     
+
+          width:100px;
+          height:100px;  
+    }   
+
+
+    &_free{  
+          svg{         
+            fill-opacity: 0;             
+        }     
+    }
+
+    &_delivery{       
+            svg{         
+              fill-opacity: 1;           
+          }     
+    }
+    
+    &_pending{  
+       
+            svg{         
+              fill-opacity: 1;             
+          }          
+    }
+    
+}
+
+
+
+
+
+
+

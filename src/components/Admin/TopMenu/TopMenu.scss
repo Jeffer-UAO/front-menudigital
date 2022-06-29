@@ -1,0 +1,45 @@
+.top-menu-admin{    
+display: flex;
+justify-content: end;
+background-color: #0F1111;
+
+
+
+    &__logo{      
+        display: flex;
+                
+        h3{
+            margin: 0 0 0 20px;
+            color: #FFF500;
+        }
+    }
+
+    &__car{
+        display: flex;
+        span{
+            color: #ffffff65;          
+        }
+        .car{
+            margin: 0 20px 0 50px;
+            display: flex;
+            color: #FFF500;
+            &:hover{
+                cursor:pointer;
+            }
+        }    
+        
+    }
+   
+
+    .logout{
+       
+    }
+  
+}
+
+
+
+
+
+
+  

@@ -1,0 +1,10 @@
+.list-product-cart{
+
+    &__product{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px black solid;
+        padding: 10px 0;
+    }
+}

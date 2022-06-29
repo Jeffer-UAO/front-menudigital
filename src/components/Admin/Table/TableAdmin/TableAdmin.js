@@ -1,0 +1,90 @@
+import React, { useState, useEffect } from "react";
+import { size } from "lodash";
+import classNames from "classnames";
+import { Link } from "react-router-dom";
+import { getOrderByTableApi } from "../../../../api/order";
+import { ORDER_STATUS } from "../../../../utils/constants";
+import { usePayment } from "../../../../hooks";
+
+import { GiRoundTable } from "react-icons/gi";
+import { GiTable } from "react-icons/gi";
+
+import "./TableAdmin.scss";
+
+export function TableAdmin(props) {
+  const { table, reload } = props;
+  const { getPaymentByTable } = usePayment();
+  const [orders, setOrders] = useState([]);
+  const [tableBusy, setTableBusy] = useState(false);
+  const [pendingPayment, setPendingPayment] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getOrderByTableApi(
+        table.id,
+        ORDER_STATUS.PENDIENTE
+      );
+      setOrders(response);
+    })();
+  }, [reload]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getOrderByTableApi(
+        table.id,
+        ORDER_STATUS.ENTREGADO
+      );
+
+      if (size(response) > 0) setTableBusy(response);
+      else setTableBusy(false);
+    })();
+  }, [reload]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getPaymentByTable(table.id);
+      if (size(response) > 0) setPendingPayment(true);
+      else setPendingPayment(false);
+    })();
+  }, [reload]);
+
+  return (
+    <Link to={`/admin/table/${table.id}`}>
+      <main className="table_admin">
+        <article
+          className={classNames({
+            table_admin_pending: size(orders) > 0,
+            table_admin_free: size(orders) <= 0,
+            table_admin_delivery: tableBusy,
+          })}
+        >
+          <div className="orders-pending head">
+            <label>MESA</label>
+            <label> {table.number}</label>
+          </div>
+
+          {pendingPayment ? (
+            <div className="orders-pending cuenta">
+              <label className="orders">CUENTA</label>
+            </div>
+          ) : (
+            <div className="orders-pending">
+              <label className="orders"></label>
+            </div>
+          )}
+          <div className="icon-table">
+            {size(orders) >= 0 && <GiRoundTable />}           
+          </div>
+
+          <div className="pendiente">
+            {size(orders) > 0 ? (
+              <label> PENDIENTES: {size(orders)}</label>
+            ) : (
+              <label></label>
+            )}
+          </div>
+        </article>
+      </main>
+    </Link>
+  );
+}

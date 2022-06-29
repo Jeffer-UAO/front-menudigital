@@ -1,0 +1,73 @@
+
+
+.order-item-admin{
+position: relative;
+//border: solid 1px rgb(9, 1, 94);
+
+align-items: center;
+justify-content: space-between;
+
+
+
+    &.pendiente{
+        border-radius: 10px;
+        background-color: #74747553;
+        border: solid 1px rgba(230, 228, 223, 0.736);
+     
+      color: #ffffff;
+    }
+
+    &.entregado{
+        border-radius: 10px;
+    //    border: solid 1px wheat;
+    background-image: linear-gradient(180deg,#ffdd00,rgba(154, 8, 3, 0.999));
+
+    }
+
+    &__time{
+        border-radius: 10px;
+        position: absolute;
+        top: -14px;
+        right: 10px;
+        background-color: rgb(53, 19, 19);
+        padding: 0px 20px;    
+        color: #ffffff;       
+        border: solid 1px #d3d3d3a3;;
+        font-weight: bolder;
+        
+    }
+    
+    &__product{
+        border-radius: 10px;       
+        display: flex;
+        align-items: center;
+
+        .card-img{ 
+            border-radius: 10px 0 0 10px;  
+            width:  120px;
+            height: 130px;           
+            margin-right: 5px;                  
+         }
+
+         .action{
+            display: flex;
+            
+            :hover{
+             
+             
+                color: #f80404;
+                
+            }
+             h6{
+                margin: 0 5px 0 5px;                 
+                cursor: pointer;
+               color: #fffb00;               
+                }
+             
+         }
+         .description{
+             height: 14vh;
+         }
+    }
+
+}

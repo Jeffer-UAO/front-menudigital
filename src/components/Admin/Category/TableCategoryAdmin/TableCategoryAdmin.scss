@@ -1,0 +1,81 @@
+.table-category-admin{
+    display: grid;     
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+
+    
+
+    &__cart{         
+        position: relative;     
+        background-image: linear-gradient(360deg,#471919,#311c13);
+        color: #fff;  
+        margin: 0 10px 10px 10px;    
+        border-radius: 5px;       
+        box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+        -webkit-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+        -moz-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);  
+        border: solid 1px rgba(255, 255, 255, 0.617);
+
+        
+        
+        path{   
+            color: antiquewhite;      
+            &:hover{
+               color: #000000;
+            }           
+        }
+        
+        
+
+        .card-img{                    
+            height: 25vh;
+            object-fit: cover;
+            object-position: center center;   
+               
+        }
+        .card-body{  
+                padding: .1rem .2rem ;              
+                min-width: 100%;   
+                text-align: center;      
+            .card-title{  
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: unset;     
+                font-size: 20px; 
+               
+            }           
+        }
+    } 
+
+    .menu_links{
+
+        position: absolute;
+        width: 0px;
+        z-index: 1;        
+        display: flex;
+        flex-direction: column; 
+        background-image: linear-gradient(360deg,#471919,#311c13);
+          padding-top: 40px;
+        text-align: end;      
+        right: 2px;
+        top: 5px;
+        transition: 0.3s;  
+        border-radius: 5px;
+        
+        svg{
+            background-color: #00000097;
+            border-radius: 50%;
+            position: absolute;
+            right: 5px;
+            top: 2px;
+        }   
+
+        &:hover{          
+            width: 90%;    
+        }      
+    }
+
+   
+  
+}

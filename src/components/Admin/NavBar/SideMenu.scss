@@ -1,0 +1,156 @@
+.logo{
+    img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+div:link {
+    margin-left: 25px;
+    border: 1px solid blue;
+  }
+
+main{
+    padding: 20px;
+}
+
+
+.menu__side{
+    width: 180px;  //80px original
+    height: 100%;
+    background: #1783db;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+  //  border-right: 20px solid #1783db;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.name__page{
+    height: 80px; // 80px antes
+    width: 100%;
+    background: #ad6969;
+    display: flex;
+    align-items: center;
+    
+    top: 0;
+    z-index: 200;
+}
+
+.name__page i{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.options__menu{
+    padding: 20px 30px; //
+    position: absolute;
+    top: 80px;
+    padding-left: 10px !important;
+   
+}
+
+.options__menu .option{
+    color: #380571;
+ //   background-color: rgb(208, 244, 9);
+    display: block;
+    position: relative;
+    transition: all 300ms;
+  ///  background-color: red;
+}
+
+.options__menu .option:hover{
+    color: white;  
+}
+
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+   
+}
+
+.options__menu .option:hover{
+   background-color: #2e024b2b;
+   width: 180px;   
+}
+
+.options__menu .option:active{
+    background-color: #2e024b66;
+    width: 180px;   
+ }
+
+
+.options__menu .option i{
+    width: 60px;
+    margin-right: 0px;
+    cursor: pointer;  
+   
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #fff;
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: rgb(89, 2, 77);
+    position: absolute;
+    top: 10%;
+    left: -10px;
+}
+
+.content{
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    width: calc(100% - 170px);
+
+}
+
+/*Clases para usar en JavaScript*/
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+}

@@ -1,0 +1,34 @@
+.add-edit-product-form{
+    
+    &__active{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    & .content-select-category{
+        width: 270px;
+    }
+
+
+    & #description{
+        width: 440px;
+    }
+
+    & #select-category{
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    #active{
+        margin-right: 20px;
+    }
+
+    .btn-success.active{
+        margin-top: 50px;
+    }
+   .input{
+        margin-top: 10px;
+    }
+   
+}

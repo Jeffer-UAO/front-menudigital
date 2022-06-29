@@ -1,0 +1,153 @@
+.list-product-car-admin{
+  //  background-color: aliceblue;
+    display: grid;      
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); 
+    gap: 30px;  
+    padding: 0 20px;    
+    text-align: center;  
+   
+
+    &__product{
+        
+        border-radius: 10px;     
+        box-shadow: 2px 3px 5px rgba(154, 147, 147, 0.942);        
+        align-items: center;
+        
+        
+    }
+    
+    .car-product{  
+        
+        .btn-delete-product-car{       
+            display: flex;            
+            align-items: center;              
+            border-radius: 50px;
+            color: #000000;
+            font-weight: bold;   
+            box-shadow: 2px 3px 5px rgba(44, 44, 44, 0.819); 
+            padding: 3px;    
+            margin: 15px 0 0 0;   
+            background-image: linear-gradient(360deg,#939393, #ffffff);
+            width: 100%;
+            justify-content: center;  
+
+            span{
+                margin-left: 10px;
+            }
+            &:hover{
+                cursor: pointer;
+                background-image: linear-gradient(360deg,#ff0a0a,#ff7539);
+                box-shadow: 0px 0px 10px rgb(159, 159, 159); 
+            }        
+        }
+
+        .card{
+            
+
+            &-body{                
+                background-image: linear-gradient(360deg,#ff0a0a35,#ff743900);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                .drive-cant{
+                    border: 1px solid rgba(125, 125, 125, 0.384);
+                    border-radius: 20px;
+                    background-image: linear-gradient(360deg,#ff0a0a35,#ff743900);
+                    max-width: 180px;
+                    display: flex;
+                    justify-content: space-between;               
+                    align-items: center;
+                    padding: 0 5px;
+                    box-shadow: 2px 3px 5px rgba(59, 59, 59, 0.919); 
+
+                    svg{
+                       cursor: pointer;                                            
+                        border-radius: 50%;
+                        
+                        &:hover{
+                            background-color: #ff743942;
+                        }
+                       
+                    }
+
+                    input{                       
+                       
+                        border: none;
+                        border-radius: 5px;                       
+                        text-align: center;
+                        background-color: #030303;
+                        color: #d9d9d9;
+                        font-weight: bolder;     
+                        font-size: 20px;                  
+                    }  
+                    
+                    
+                    input[type="number"] {
+                        -webkit-appearance: textfield;
+                           -moz-appearance: textfield;
+                                appearance: textfield;
+                      }
+                      input[type=number]::-webkit-inner-spin-button, 
+                      input[type=number]::-webkit-outer-spin-button { 
+                        -webkit-appearance: none;
+                      }
+                  
+                }
+            }
+          
+            &-img{                               
+                height: 26vh;                
+                object-fit: cover;
+                object-position: center center;
+                border-radius: 10px !important;                  
+            }           
+            &-title{
+                color: rgba(255, 255, 255, 0.899);
+                margin: 0 0 10px 0;           
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                text-transform: uppercase; 
+                font-weight: bold;
+                font-size: 18px;                   
+                
+            }
+            &-subtitle{
+                margin: 0 0 10px 0;                
+                font-size: 18px;                   
+                color: rgba(250, 250, 250, 0.879);
+                font-weight: bold;              
+                
+            }
+        }       
+    }
+}
+
+
+.btn-content{   
+    display: flex;
+
+    .btn-send{
+        margin: 15px;
+        background-color: #dbdada;
+        padding: 5px;   
+        width: 300px;
+        border-radius: 60px;
+        text-align: center;
+        color: #1d1d1d;
+        font-size: 20px;
+        box-shadow: 2px 3px 5px rgba(59, 59, 59, 0.919); 
+        font-weight: bold;
+        background-image: linear-gradient(360deg,#ff0a0a,#ff7539);
+       .nota{
+           background-color: #b8aeae;
+       }
+     
+        &:hover{
+            cursor: pointer;
+            background-image: linear-gradient(180deg,#ff0a0a,#ff7539);
+            box-shadow: 0px 0px 10px rgb(159, 159, 159);
+        }
+    }
+}
