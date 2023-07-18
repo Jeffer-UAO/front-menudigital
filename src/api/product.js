@@ -1,6 +1,7 @@
-import { BASE_PATH } from "../utils/constants";
+import { BASE_API } from "../utils/constants";
 
-const BASE_API = localStorage.getItem(BASE_PATH);
+//const BASE_API = localStorage.getItem(BASE_PATH);
+
 
 export async function getProductsApi() {
   try {
@@ -41,6 +42,7 @@ export async function addProductsApi(data, token) {
 }
 
 export async function updateProductsApi(id, data, token) {
+  console.log(data);
   try {
     const formData = new FormData();
     formData.append("title", data.title);

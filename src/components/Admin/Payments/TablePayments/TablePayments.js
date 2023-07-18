@@ -34,7 +34,7 @@ export function TablePayments(props) {
         >
           <ol>
             <li>
-              <p>Codigo:</p>
+              <p>Pedido:</p>
               <span>{payment.id}</span>
             </li>
             <li>
@@ -64,6 +64,7 @@ export function TablePayments(props) {
         onClose={openCloseModal}
         title={titelModal}
         children={contentModal}
+        size="sm"
       />
     </div>
   );

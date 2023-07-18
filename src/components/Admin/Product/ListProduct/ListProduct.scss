@@ -1,0 +1,55 @@
+
+.list-products-client{
+    display: grid;    
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+&__product{    
+ //   border-radius: 5px;
+ //   background-color: #fafafa0e;
+ //   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+ //   -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+ //   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+    
+    
+ // color: aliceblue;
+
+    &:hover{
+        cursor: pointer;
+        opacity: 0.7;
+    }
+    .card-img{
+        border-radius: 5px 5px 0 0;   
+     
+    //    height: 25vh;
+    //    object-fit: cover;
+    //    object-position: center center;           
+    }
+    .card-body{          
+       
+     //       min-width: 100%;       
+            padding: 5px 10px  5px 5px;
+            background-color: rgb(241, 238, 237);
+        h6{          
+           white-space: nowrap;
+           overflow: auto;
+      // text-overflow: ellipsis;
+            text-align: start;           
+            text-transform: uppercase;
+            color: rgb(54, 54, 54) !important;
+        }
+        label{ 
+            white-space: nowrap;
+        //    overflow: hidden;
+        //    text-overflow: ellipsis;
+        //    text-align: unset;    
+            color: greenyellow;
+            letter-spacing: 1px;
+            font-weight: bolder;
+            background-color: rgb(54, 54, 54);
+          border-radius: 15px;
+          padding: 5px;
+        }
+    }
+}
+}

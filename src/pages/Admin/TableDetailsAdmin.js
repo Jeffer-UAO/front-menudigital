@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOrder, useTable, usePayment } from "../../hooks";
-import { useParams } from "react-router-dom";
+import { getTableCart } from "../../api/cart";
 import { forEach, size } from "lodash";
 import {
   HeaderPage,
@@ -13,7 +13,7 @@ import { Spinner } from "reactstrap";
 
 export function TableDetailsAdmin() {
   const [reloadOrders, setReloadOrders] = useState(false);
-  const { id } = useParams();
+  const id = getTableCart();
   const [paymentData, setPaymentData] = useState(null);
   const { loading, orders, getOrdersByTable, addPaymentToOrder } = useOrder();
   const { getTable, table } = useTable();
@@ -39,13 +39,9 @@ export function TableDetailsAdmin() {
   const onReloadOrders = () => setReloadOrders((prev) => !prev);
   const openCloseModal = () => setShowModal((prev) => !prev);
 
-  //function formatNumber(number) {
-  //  return new Intl.NumberFormat().format(number);
-  //}
-
   const onCreatePayment = async () => {
     const result = window.confirm(
-      "¿Estas seguro de generar la cunta de la mesa"
+      "¿Estas seguro de generar la cuenta de la mesa"
     );
 
     if (result) {
@@ -69,7 +65,6 @@ export function TableDetailsAdmin() {
 
       for await (const order of orders) {
         await addPaymentToOrder(order.id, payment.id);
-        // console.log(order.id);
       }
       onReloadOrders();
     }
@@ -95,14 +90,15 @@ export function TableDetailsAdmin() {
       <ModalBasic
         show={showModal}
         onClose={openCloseModal}
-        title="Generar Pedido"
+        title="Detalle"
+     //   size="sm"
       >
         {paymentData ? (
           <PaymentDetail
             payment={paymentData}
             orders={orders}
             openCloseModal={openCloseModal}
-            onReloadOrders={onReloadOrders}
+            onReloadOrders={onReloadOrders}           
           />
         ) : (
           <AddOrderForm

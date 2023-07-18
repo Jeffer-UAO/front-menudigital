@@ -153,6 +153,7 @@
 .profile_content .profile .profile_details{
     display: flex;
     align-items: center;
+    
 }
 
 .profile .profile_details svg{
@@ -161,30 +162,45 @@ width: 45px;
 object-fit: cover;
 border-radius: 12px;
 background-color: #11101d;
+
 }
 
 .profile .profile_details .name_job{
     margin-left: 10px;
+   
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+    margin: 10px 0;
 }
 
 .profile .profile_details .name_job .name{
     font-size: 15px;
     font-weight: 600;
+    
 }
 
 .profile .profile_details .name_job .job{
     font-size: 12px;
+    
+    
 }
 
 .profile #log_out{
     position: absolute;
-    left: 88%;
+    left: 50%;
+    width: 40px;
     bottom: 5px;
-    transform: translateX(-50%);
-    min-width: 50px;
+    transform: translateX(-50%); 
     line-height: 50px;  
     font-size: 20px;
     border-radius: 12px;
+   // background-color: rgba(14, 75, 0, 0.961);
+    text-align: center;
+    cursor: pointer;
+    
 }
 
 

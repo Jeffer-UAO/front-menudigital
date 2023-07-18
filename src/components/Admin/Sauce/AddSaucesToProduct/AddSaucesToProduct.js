@@ -1,10 +1,10 @@
 import { map } from "lodash";
-import React from "react";
 
 import "./AddSaucesToProduct.scss";
 
 export function AddSaucesToProduct(props) {
-  const { openCloseModal, sauces } = props;
+  const { sauces } = props;
+
   return (
     <div className="add-sauce-to-product">
       <div className="add-sauce-to-product__sauces">
@@ -13,12 +13,12 @@ export function AddSaucesToProduct(props) {
           <div key={index} className="sauce">
             {sauce.description}
 
-            <div class="toggle-button-cover">
-              <div class="button-cover">
-                <div class="button r" id="button-3">
-                  <input type="checkbox" class="checkbox" />
-                  <div class="knobs"></div>
-                  <div class="layer"></div>
+            <div className="toggle-button-cover">
+              <div className="button-cover">
+                <div className="button r" id="button-3">
+                  <input type="checkbox" className="checkbox" />
+                  <div className="knobs"></div>
+                  <div className="layer"></div>
                 </div>
               </div>
             </div>
@@ -30,12 +30,6 @@ export function AddSaucesToProduct(props) {
         <h6>Comentario adicional</h6>
         <input type="text"></input>
       </div>
-      .{" "}
-      <div className="sauce-admin__comment">
-        <h6>Cantidad</h6>
-        <input type="number"></input>
-      </div>
-      <button onClick={openCloseModal}>Salir</button>
     </div>
   );
 }

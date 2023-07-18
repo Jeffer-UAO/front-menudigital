@@ -1,6 +1,7 @@
-import { BASE_PATH } from "../utils/constants";
+import { BASE_API} from "../utils/constants";
 
-const BASE_API = localStorage.getItem(BASE_PATH);
+//const BASE_API = localStorage.getItem(BASE_PATH);
+
 
 export async function getTablesApi(token) {
   try {

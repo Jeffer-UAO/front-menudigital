@@ -6,9 +6,9 @@
   
     &__header{
         margin: 0 130px;    
-        border: 3px inset white;
+       // border: 3px inset white;
         color: white;
-        border-radius: 1.5rem;
+      //  border-radius: 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -42,7 +42,8 @@
     &__orders{   
       margin:  10px 20px 2px;
       display: grid;      
-      grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));    
+      grid-template-columns: repeat(auto-fit, minmax(8rem, 0fr));    
+      justify-content: center;
       gap: 10px;    
       
     }

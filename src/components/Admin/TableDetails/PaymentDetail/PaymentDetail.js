@@ -28,29 +28,16 @@ export function PaymentDetail(props) {
 
   return (
     <div className="payment-detail">
-      <Table striped className="table-category-admin">
-        <tbody>
-          <tr>
-            <td>Mesa</td>
-            <td>{payment.table_data.number}</td>
-          </tr>
-          <tr>
-            <td>
-              <h4>Total</h4>
-            </td>
-            <td>
-              <h4>$ {formatNumber(payment.totalPayment)}</h4>
-            </td>
-          </tr>
-          <tr>
-            <td>Forma de pago:</td>
-            <td>{payment.paymentType}</td>
-          </tr>
-        </tbody>
-      </Table>
+      <div striped className="table-category-admin">
+        <h5>Mesa No. {payment.table_data.number}</h5>
 
-      <Button block onClick={onCloseTable}>
-        Marcar como pagado y cerrar mesa
+        <h5>Total: $ {formatNumber(payment.totalPayment)}</h5>
+
+        <p>Forma de pago: {payment.paymentType}</p>
+      </div>
+
+      <Button color="success" block onClick={onCloseTable}>
+        Pagar y cerrar mesa
       </Button>
     </div>
   );

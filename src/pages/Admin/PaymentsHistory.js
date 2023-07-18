@@ -10,6 +10,8 @@ export function PaymentsHistory() {
     getPayments();
   }, []);
 
+  console.log(payments);
+
   return (
     <div className="all-container">
       <div className="header-page">

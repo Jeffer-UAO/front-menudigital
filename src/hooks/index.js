@@ -7,3 +7,7 @@ export * from "./useTable";
 export * from "./useOrder";
 export * from "./usePayment";
 export * from "./useSauce";
+export * from "./useSauceOrder";
+export * from "./useClientTemp";
+export * from "./useGroup";
+export * from "./useSalesman";

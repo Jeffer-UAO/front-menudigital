@@ -1,23 +1,19 @@
 .table-payment-admin{
-    margin:  0px 20px;
+    margin:  0px 10px;
     display: grid;      
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));    
-    gap: 20px;  
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));    
+    gap: 10px;  
    
 
     &__cart{     
-        background-color: rgba(255, 240, 240, 0.278);
+        background-color: rgb(31, 32, 57);
         color: #fff;       
         display: flex;    
-        border: solid 1px white;
-        border-radius: 0 10px 10px 0;
-        box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
-        -webkit-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
-        -moz-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);  
+        border: solid 1px rgb(135, 135, 135) !important;
+        border-radius: 3px;
+ 
 
-        &:hover{
-            box-shadow: 2px 3px 5px rgba(237, 241, 235, 0.663); 
-          
+        &:hover{                      
             cursor: pointer;
         }
 
@@ -27,18 +23,20 @@
         }
         li{
             display: flex;       
-            border-bottom: solid 1px black;    
+    //  border-bottom: solid 2px rgb(14, 11, 42);    
                
         }
         p{
            width: 70px;
-            padding: 5px 0 10px 10px;
-            background-color: rgb(61, 27, 27);  
-            border-right: 3px solid rgb(240, 235, 235);   
+            padding: 0 5px;
+            background-color: rgb(80, 76, 4);  
+         //   border-right: 1px solid rgb(240, 235, 235);   
                    
         }
-        span{           
-            padding: 5px 10px;
+        span{    
+             
+            padding: 0 10px;
+            font-style: italic;
         }
     }
    

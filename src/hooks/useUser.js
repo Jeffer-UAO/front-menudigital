@@ -3,6 +3,7 @@ import {
   addUserApi,
   getMeAPi,
   getUsersApi,
+  getUserByIdApi,
   updateUserApi,
   deleteUserApi,
 } from "../api/user";
@@ -12,6 +13,7 @@ export function useUser() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [users, setUsers] = useState(null);
+  const [user, setUser] = useState([]);
 
   const { auth } = useAuth();
 
@@ -30,6 +32,18 @@ export function useUser() {
       const response = await getUsersApi(auth.token);
       setLoading(false);
       setUsers(response);
+    } catch (error) {
+      setLoading(false);
+      setError(error);
+    }
+  };
+
+  const getUserById = async (id) => {
+    try {
+      setLoading(true);
+      const response = await getUserByIdApi(id, auth.token);
+      setLoading(false);
+      setUser(response);
     } catch (error) {
       setLoading(false);
       setError(error);
@@ -73,7 +87,9 @@ export function useUser() {
   return {
     loading,
     users,
+    user,
     getUsers,
+    getUserById,
     error,
     getMe,
     addUser,

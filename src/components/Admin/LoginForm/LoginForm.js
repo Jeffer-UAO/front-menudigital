@@ -27,14 +27,14 @@ export function LoginForm() {
   });
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Label for="username">Usuario</Label>
+      <h6 for="username">Usuario</h6>
       <Input
         name="username"
         value={formik.values.username}
         onChange={formik.handleChange}
         error={formik.errors.username}
       />
-      <Label for="password">Contraseña</Label>
+      <h6 for="password">Contraseña</h6>
       <Input
         type="password"
         name="password"
@@ -42,11 +42,13 @@ export function LoginForm() {
         onChange={formik.handleChange}
         error={formik.errors.password}
       />
-      <div>
-        <Button color="primary" type="submit">
+
+        <Button block color="primary" type="submit">
           Aceptar
         </Button>
-      </div>
+        <a href="/admin"><label>Crear una nueva cuenta</label></a>
+        
+    
     </form>
   );
 }

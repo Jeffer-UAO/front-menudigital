@@ -9,3 +9,6 @@ export * from "./TableDetailsAdmin";
 export * from "./PaymentsHistory";
 export * from "./CardAdmin";
 export * from "./SauceAdmin";
+export * from "./SalesmanAdmin";
+export * from "./GroupAdmin";
+export * from "./Register";

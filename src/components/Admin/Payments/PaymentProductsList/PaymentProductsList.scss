@@ -1,7 +1,29 @@
-.payment-product-list-admin{
-    &__product{
-        display: flex;       
-        justify-content: space-between;
-      
-    }    
+.payment-product-list-admin {
+
+
+  &__product {
+    display: flex;
+  justify-content: space-between;
+ 
+    .title{
+     width: 200px;
+      text-align: start;     
+    }
+    .qty{
+      text-align: center;
+      padding:  0 10px 0 10px;
+    }
+    .price{    
+      width: 80px;
+      text-align: end;
+    }
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    p {
+      border-top: 1px solid white;
+    }
+  }
 }

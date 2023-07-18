@@ -5,7 +5,7 @@ import "./ModalBasic.scss";
 export function ModalBasic(props) {
   const { show, size, title, children, onClose } = props;
   return (
-    <div>     
+    <div>
       <Modal
         toggle={onClose}
         keyboard={true}

@@ -15,6 +15,10 @@ export function ListProducts(props) {
     history.push(`${location.pathname}/${id}`);
   };
 
+  function formatNumber(number) {
+    return new Intl.NumberFormat().format(number);
+  }
+
   return (
     <div className="list-products-client">
       {map(products, (product) => (
@@ -26,10 +30,11 @@ export function ListProducts(props) {
           <CardImg src={product.image} alt="Card image cap" />
           <CardBody>
             <CardTitle>{product.title}</CardTitle>
-            <CardSubtitle>$ {product.price}</CardSubtitle>
+            <CardSubtitle>$ {formatNumber(product.price)}</CardSubtitle>
           </CardBody>
         </div>
       ))}
     </div>
   );
 }
+

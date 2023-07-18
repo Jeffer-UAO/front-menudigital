@@ -1,0 +1,49 @@
+
+
+
+
+
+#button-4 .knobs:before
+{
+    content: 'NO';
+   
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    color: rgb(66, 90, 178);
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: -1;
+    padding: 2px;
+    background-color:  rgba(241, 214, 14, 0);
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-4 .checkbox:active + .knobs:before
+{
+    width: 46px;
+    border-radius: 100px;
+    
+}
+
+#button-4 .checkbox:checked:active + .knobs:before
+{
+    margin-left: -26px;
+}
+
+#button-4 .checkbox:checked + .knobs:before
+{
+    content: 'SI';   
+    left: 42px;
+    background-color:  rgb(241, 214, 14);
+    
+}
+
+#button-3 .checkbox:checked ~ .layer
+{
+    
+}

@@ -7,12 +7,15 @@ export function Detail() {
   const { loading, product, getProductById } = useProduct();
   const { idProduct } = useParams();
 
-  console.log(product);
   useEffect(() => {
     getProductById(idProduct);
+
   }, [idProduct]);
 
   return (
+    <>
     <>{loading ? <p>Cargando...</p> : <ProductDetail product={product} />}</>
+
+    </>
   );
 }

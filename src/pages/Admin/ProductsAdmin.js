@@ -4,14 +4,14 @@ import {
   HeaderPage,
   TableProductAdmin,
   AddEditProductForm,
-  AddSaucesToProduct,
+  //  AddSaucesToProduct,
 } from "../../components/Admin";
 import { ModalBasic } from "../../components/Common";
-import { useProduct, useSauces } from "../../hooks";
+import { useProduct } from "../../hooks";
 
 export function ProductsAdmin() {
-  const { loading, getProducts, deleteProducts, products } = useProduct();
-  const { getSaucesActive, sauces } = useSauces();
+  const { loading, addProducts, getProducts, deleteProducts, products } =
+    useProduct();
 
   const [showModal, setShowModal] = useState(false);
   const [titleModal, setTitleModal] = useState(null);
@@ -20,21 +20,15 @@ export function ProductsAdmin() {
 
   useEffect(() => {
     getProducts();
-    getSaucesActive();
   }, [refetch]);
 
   const openCloseModal = () => setShowModal((prev) => !prev);
   const onRefetch = () => setRefetch((prev) => !prev);
 
-  const getSaucesAct = () => {
-    setTitleModal("Gusto");
-    setContentModal(
-      <AddSaucesToProduct openCloseModal={openCloseModal} sauces={sauces} />
-    );
-    openCloseModal();
-  };
-
-  const addProduct = () => {
+  const addProduct = async () => {
+    await addProducts();
+    //INSERT A PRODUCT ONLY IDPRODUCT
+    //SET RESPONSE IN THE LOCALSTORE
     setTitleModal("Nuevo Producto");
     setContentModal(
       <AddEditProductForm onClose={openCloseModal} onRefetch={onRefetch} />
@@ -80,7 +74,7 @@ export function ProductsAdmin() {
               products={products}
               updateProduct={updateProduct}
               deleteProduct={onDeleteProduct}
-              getSaucesAct={getSaucesAct}
+              //    getSaucesAct={getSaucesAct}
             />
           </>
         )}

@@ -12,6 +12,7 @@ import { useAuth } from "./";
 
 export function useProduct() {
   const [loading, setLoading] = useState(true);
+  const [loadingII, setLoadingII] = useState(false);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState(null);
   const [product, setProduct] = useState(null);
@@ -33,8 +34,11 @@ export function useProduct() {
   const addProducts = async (data) => {
     try {
       setLoading(true);
-      await addProductsApi(data, auth.token);
+      setLoadingII(true);
+      const result = await addProductsApi(data, auth.token);
+      setLoadingII(false);
       setLoading(false);
+      return result;
     } catch (error) {
       setLoading(false);
       setError(error);
@@ -45,8 +49,10 @@ export function useProduct() {
     console.log(data);
     try {
       setLoading(true);
+      setLoadingII(true);
       await updateProductsApi(id, data, auth.token);
       setLoading(false);
+      setLoadingII(false);
     } catch (error) {
       setLoading(false);
       setError(error);
@@ -89,6 +95,7 @@ export function useProduct() {
 
   return {
     loading,
+    loadingII,
     error,
     product,
     products,

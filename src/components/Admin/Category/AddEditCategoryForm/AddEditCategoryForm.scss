@@ -1,9 +1,17 @@
 .add-edit-category-form{
+align-items: center;
     .card-img{
-        margin-top: 20px;      
+        margin-top: 20px;   
+        height: 30vh;
+     // width: 70%;
+      border-radius: 5px 0 0 5px;
+      object-fit: cover;
+      object-position: center center;
+
     }
     .btn-success{
-        margin-top: 50px;
+        margin-top: 30px;
+        
     }
     .form-control{
         margin-bottom: 10px;

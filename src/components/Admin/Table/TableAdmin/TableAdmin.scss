@@ -1,46 +1,82 @@
 
 
 .table_admin{
-background-color: #6f6f6f45;
-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
--webkit-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
--moz-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25); 
+ background-color: #f9f9f910;
   border-radius: 3PX;
   height: 12rem;
-  border: solid 1px rgba(255, 255, 255, 0.608);
 
+  box-shadow: 0px 1px 1px 1px rgba(238, 241, 237, 0.227);
 
-   .head{
-       
-       display: flex;
-       justify-content: space-between;   
-    padding: 0 10px 0 10px;
-    background-color: rgb(77, 30, 27);
-    color: aliceblue;
-      label{
-          padding: 5px;
-          font-size: 20px;
-          width: 100%;
-     }
-}
-.cuenta{
+   .head{   
+    display: flex;
+    justify-content: space-between;   
+    padding: 3px 5px;
+    background-color: rgba(43, 40, 61, 0.491);
+    color: aliceblue;     
+  border-radius: 3px 3px 0 0;
+  border-bottom: solid rgba(245, 245, 245, 0.115) 1px;
+    label{       
+        font-size: 10px;    
+        color: rgba(243, 246, 248, 0.748);   
+        font-weight: bold;
+        border: solid 1px rgba(255, 255, 255, 0.321);
+        background-color: rgba(240, 248, 255, 0.275);
+         
+       width: 80px;           
+        padding: 5px;             
+        border-radius: 5px;
+        white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: unset;                  
+      text-transform: uppercase;     
+      
+    }   
     
+    p{
+        font-size: 10px;  
+        max-width: 80px;           
+        padding: 5px;  
+        white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: unset;                  
+      text-transform: uppercase;  
+      
+    }
+    
+  h6{
+    display: flex;
+    background-color: black;
+    padding: 3px;
+    border-radius: 5px;  
+    min-width: 20px;
+    max-width: 40px;     
+    justify-content: center;
+    border-bottom: 3px solid yellow;
+    
+  }
+}
+
+.cuenta{ 
+ 
     text-align: center;
-    background-color: yellow;
+   background-color: rgba(255, 243, 5, 0.926);
+   // border: solid 1px rgba(255, 255, 0, 0.363);
+    border-radius: 0 0 0px 30px;
     label{
-        color: black;
-        font-weight: bolder;
+        color: rgb(40, 49, 68);
+        
+        
     }
 }
 
-    article{     
-      
+    article{           
         .icon-table{
             display: flex;
-            justify-content: center;
+            justify-content: center;            
             svg{
-                color: rgba(255, 255, 255, 0.725);
-                
+                color: rgba(240, 224, 4, 0.549);                
             }
         }
         
@@ -64,7 +100,7 @@ box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
     svg{       
         //  padding:5px;     
 
-          width:100px;
+          width:80px;
           height:100px;  
     }   
 
@@ -76,13 +112,14 @@ box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
     }
 
     &_delivery{       
+      //  box-shadow: 0px 1px 1px 1px rgb(33, 36, 115);
             svg{         
               fill-opacity: 1;           
           }     
     }
     
     &_pending{  
-       
+    //    box-shadow: 0px 1px 1px 1px rgb(33, 36, 115);
             svg{         
               fill-opacity: 1;             
           }          

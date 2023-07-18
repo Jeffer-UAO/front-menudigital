@@ -1,51 +1,91 @@
-import React, { useEffect } from "react";
-import { Container, Button } from "reactstrap";
-import { useTable } from "../../hooks";
-import { useParams, useHistory, Link } from "react-router-dom";
+import React from "react";
+import { BiCartAlt } from "react-icons/bi";
+import { useCart } from "../../hooks";
+import { size } from "lodash";
+
+import { BiDish } from "react-icons/bi";
+import { BiBookReader } from "react-icons/bi";
+import { IoIosClose } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import { DiRuby } from "react-icons/di";
+import { FaOpencart } from "react-icons/fa";
+
+import { useParams, useHistory } from "react-router-dom";
 import "./ClientLayout.scss";
 
 export function ClientLayout(props) {
   const { children } = props;
-  const { isExistTable } = useTable();
+  const { products } = useCart();
   const { tableNumber } = useParams();
   const history = useHistory();
-
-  useEffect(() => {
-    (async () => {
-      const exit = await isExistTable(tableNumber);
-      if (!exit) closeTable();
-    })();
-  }, [tableNumber]);
 
   const closeTable = () => {
     history.push("/");
   };
 
   const goToCart = () => {
-    history.push(`/client/${tableNumber}/cart`);
+    history.push(`/client/${tableNumber}/cart/`);
   };
 
   const goToOrders = () => {
-    history.push(`/client/${tableNumber}/orders`);
+    history.push(`/client/${tableNumber}/orders/`);
   };
 
-  return (
-    <div className="client-layout-bg">
-      <Container className="client-layout">
-        <div className="client-layout__header">
-          <Link to={`/client/${tableNumber}`}>
-            <h1>iCard</h1>
-          </Link>
-          <span>Mesa: {tableNumber}</span>
-          <div>
-            <Button onClick={goToCart}>Carrito</Button>
-            <Button onClick={goToOrders}>Lista</Button>
-            <Button onClick={closeTable}>Salir</Button>
-          </div>
-        </div>
+  const goToMenu = () => {
+    history.push(`/client/${tableNumber}/`);
+  };
 
-        <div className="client-layout__content">{children}</div>
-      </Container>
+  function goBackHandle() {
+    history.goBack();
+  }
+
+  console.log(products);
+  return (
+    <div className="client-content">
+      <div className="client-content home">
+        <div className="client-content__header">
+          <DiRuby size="35" onClick={closeTable} />
+          <h3>PICAPIEDRA</h3>
+          <p onClick={closeTable} ><u>Cerrar</u></p>
+        </div>
+        <div className="client-content__menu">
+          <span className="back" onClick={goBackHandle}>
+            <IoIosArrowBack size="35" />
+            <h6>Atras</h6>
+          </span>
+
+          <h1 onClick={goToMenu}><u>Menú</u></h1>
+
+          {tableNumber > 0 ? (
+            <span>Mesa {tableNumber}</span>
+          ) : tableNumber == -1 ? (
+            <span>Para llevar</span>
+          ) : tableNumber == -2 ? (
+            <span>Domicilio</span>
+          ) : (
+            <span>Recoger en Restaurante</span>
+          )}
+        </div>
+        <div className="client-content__body">{children}</div>
+
+        <div className="client-content__footer">
+          <span className="car" onClick={goToCart}>
+            <BiCartAlt size="30" />
+            {size(products) > 0 ? <p>{size(products)}</p> : ""}
+
+            <h6>CARRITO</h6>
+          </span>
+
+          <span onClick={goToOrders}>
+            <BiDish size="30" />
+            <h6>PEDIDOS</h6>
+          </span>
+          <span onClick={goToMenu}>
+            <BiBookReader size="30" />
+            <h6>MENÚ</h6>
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

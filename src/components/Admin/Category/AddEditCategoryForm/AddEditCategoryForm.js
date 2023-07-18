@@ -49,6 +49,7 @@ export function AddEditCategoryForm(props) {
         onChange={formik.handleChange}
         error={formik.errors.title}
       />
+       <CardImg src={previewImage} />
       <Button
         type="button"
         block
@@ -58,7 +59,7 @@ export function AddEditCategoryForm(props) {
         {previewImage ? "Cambiar imagen" : "Subir imagen"}
       </Button>
       <input {...getInputProps()} />
-      <CardImg src={previewImage} />
+     
       <Button type="submit" active color="success" block>
         Guardar
       </Button>

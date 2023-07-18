@@ -85,17 +85,15 @@ export function useTable() {
     }
   };
 
-
   const getTableByNumber = async (tableNumber) => {
     try {
-      const response = await getTableByNumberApi(tableNumber);     
+      const response = await getTableByNumberApi(tableNumber);
+      setTable(response);
       return response;
     } catch (error) {
       setError(error);
     }
   };
-
-
 
   return {
     loading,

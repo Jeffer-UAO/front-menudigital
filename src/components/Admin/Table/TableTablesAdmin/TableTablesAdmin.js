@@ -31,9 +31,8 @@ export function TableTablesAdmin(props) {
       {map(tables, (table, index) => (
         <main className="table_list" key={index}>
           <article>
-            <p>{table.number}</p>
+            {table.name ? <h6>{table.name} </h6> : <p>{table.number}</p>}
             <IcTable />
-
             <>
               <Action
                 table={table}
@@ -50,7 +49,7 @@ export function TableTablesAdmin(props) {
         show={showModal}
         onClose={openCloseModal}
         title="Codigo QR"
-        size=""
+        size="sm"
         children={contentModal}
       />
     </div>

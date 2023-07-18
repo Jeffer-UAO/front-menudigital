@@ -12,6 +12,7 @@ export function TableSaucesAdmin(props) {
       {sauces &&
         map(sauces, (sauce, index) => (
           <div className="cart" key={index}>
+           
             <div
               className="table-sauces-admin__sauce"
               // onClick={() => updateProduct(product)}

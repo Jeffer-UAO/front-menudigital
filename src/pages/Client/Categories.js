@@ -11,10 +11,6 @@ export function Categories() {
 
   return (
     <>
-      <div>
-        <h5>...</h5>
-        <h5>MENÚ PICAPIEDRA</h5>
-      </div>
       {loading ? (
         <p>Cargando...</p>
       ) : (

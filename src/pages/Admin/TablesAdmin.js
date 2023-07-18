@@ -24,7 +24,7 @@ export function TablesAdmin() {
   const onRefetch = () => setRefetch((prev) => !prev);
 
   const addTable = () => {
-    setTitleModal("Crear mesa");
+    setTitleModal("Crear Mesa o Tipo");
     setContentModal(
       <AddEditTableForm onClose={openCloseModal} onRefetch={onRefetch} />
     );
@@ -54,7 +54,11 @@ export function TablesAdmin() {
   return (
     <div className="all-container">
       <div className="header-page">
-        <HeaderPage title="Mesas" btnTitle="Nueva mesa" btnClick={addTable} />
+        <HeaderPage
+          title="Mesas"
+          btnTitle="Nueva Mesa o Tipo"
+          btnClick={addTable}
+        />
       </div>
       <div className="containerBody">
         <div className="spinner">
@@ -73,6 +77,7 @@ export function TablesAdmin() {
           title={titleModal}
           children={contentModal}
           onClose={openCloseModal}
+          size="sm"
         />
       </div>
     </div>

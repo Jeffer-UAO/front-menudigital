@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, CardImg } from "reactstrap";
+import { CardImg } from "reactstrap";
 import { MdDeleteForever } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
 import { map } from "lodash";
@@ -8,6 +8,7 @@ import "./TableUsers.scss";
 
 export function TableUsers(props) {
   const { users, updateUser, onDeleteUser } = props;
+
   return (
     <div className="table-users-admin">
       {map(users, (user, index) => (
@@ -29,29 +30,15 @@ export function TableUsers(props) {
             <h6>{user.is_active ? <p>Activo</p> : <p>Inactivo</p>}</h6>
           </div>
           <div className="links">
-            <a href="#">
-              <MdDeleteForever size={38} color="#ff0a0aaa" />
+            <a onClick={() => onDeleteUser(user)}>
+              <MdDeleteForever size={30} color="yellow" />
             </a>
-            <a href="#">
-              <AiFillEdit size={38} color="#ff0a0aaa" />
+            <a onClick={() => updateUser(user)}>
+              <AiFillEdit size={30} color="yellow" />
             </a>
           </div>
         </div>
       ))}
     </div>
-  );
-}
-
-function Action(props) {
-  const { user, updateUser, onDeleteUser } = props;
-  return (
-    <>
-      <td className="actions-user-admin">
-        <Button onClick={() => updateUser(user)}>E</Button>
-      </td>
-      <td>
-        <Button onClick={() => onDeleteUser(user)}>X</Button>
-      </td>
-    </>
   );
 }

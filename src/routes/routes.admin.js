@@ -1,6 +1,7 @@
-import { AdminLayout } from "../layouts";
+import { AdminLayout,  BasicLayout } from "../layouts";
 //import { Error404 } from "../pages";
 import {
+  Register,
   OrdersAdmin,
   UserAdmin,
   CategoriesAdmin,
@@ -10,9 +11,17 @@ import {
   PaymentsHistory,
   CardAdmin,
   SauceAdmin,
+  GroupAdmin,
+  SalesmanAdmin,
 } from "../pages/Admin";
 
 const routesAdmin = [
+  {
+    path: "/admin",
+    layout: BasicLayout,
+    component: Register,
+    exact: true,
+  },
   {
     path: "/admin/orders",
     layout: AdminLayout,
@@ -23,6 +32,18 @@ const routesAdmin = [
     path: "/admin/sauce",
     layout: AdminLayout,
     component: SauceAdmin,
+    exact: true,
+  },
+  {
+    path: "/admin/salesman",
+    layout: AdminLayout,
+    component: SalesmanAdmin,
+    exact: true,
+  },
+  {
+    path: "/admin/group",
+    layout: AdminLayout,
+    component: GroupAdmin,
     exact: true,
   },
   {

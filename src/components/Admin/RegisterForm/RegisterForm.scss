@@ -1,0 +1,57 @@
+.RegisterForm{
+    width: 100% !important;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;  
+  
+   
+
+    .register-content{
+        
+        height: 60vh;       
+        display: flex;
+        flex-direction: column;   
+       padding: 30px;
+       box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+        -webkit-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+        -moz-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
+            
+        border-radius: 5px;
+      width: 300px;  
+     
+      h4{
+        margin-bottom: 30px !important;
+        border-bottom: solid 3px red;
+        
+      }
+      .remember{
+        margin-top: 20px;         
+        
+       label{
+          color: rgb(11, 61, 241) !important;
+        }
+      }
+
+      
+    }
+   
+    .input{
+        margin: 5px 0; 
+    }
+    button{
+        
+        margin-top: 15px;
+    }
+}
+
+.closed{
+  background-color: rgb(148, 5, 5);
+  padding: 8px 25px;
+  color: aliceblue;
+  text-align: end;
+  
+
+}

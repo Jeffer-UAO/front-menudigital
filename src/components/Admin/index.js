@@ -12,3 +12,6 @@ export * from "./Footer";
 export * from "./Payments";
 export * from "./NavBarSide";
 export * from "./Sauce";
+export * from "./Salesman";
+export * from "./Group";
+export * from "./RegisterForm";

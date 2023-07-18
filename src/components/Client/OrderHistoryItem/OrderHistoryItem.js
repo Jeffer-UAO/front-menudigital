@@ -10,7 +10,7 @@ export function OrderHistoryItem(props) {
   const { order } = props;
   const { title, image } = order.product_data;
 
-  console.log(order);
+
   return (
     <div
       className={classNames("order-history-item", {
@@ -20,17 +20,21 @@ export function OrderHistoryItem(props) {
       <div className="order-history-item__time">
         <span>
           Pedido {moment(order.create_at).startOf("second").fromNow()}
+          <h4>{title}</h4>
         </span>
       </div>
-      <div className="order-history-item__product">
-        <p>imagen</p>
-        <p>{title}</p>
+      <span className="order-history-item__product">
+        <div>
+          <img src={image} alt="Card image cap" />
+        </div>
+      </span>
+      <div>
+        {order.status === ORDER_STATUS.PENDIENTE ? (
+          <h5>Estado: Pendiente</h5>
+        ) : (
+          <h6>Estado: Entregado</h6>
+        )}
       </div>
-      {order.status === ORDER_STATUS.PENDIENTE ? (
-        <span>Estado: Preparando !!</span>
-      ) : (
-        <span>Estado: Entregado</span>
-      )}
     </div>
   );
 }

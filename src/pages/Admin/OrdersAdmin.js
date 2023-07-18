@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { HeaderPage, TableListAdmin } from "../../components/Admin";
 import { Spinner } from "reactstrap";
-import { useTable } from "../../hooks";
+import { useTable} from "../../hooks";
 
 export function OrdersAdmin() {
+ // const { auth } = useAuth();
   const { loading, tables, getTables } = useTable();
 
   useEffect(() => {

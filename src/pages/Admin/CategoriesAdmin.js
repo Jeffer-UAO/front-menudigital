@@ -77,6 +77,7 @@ export function CategoriesAdmin() {
         onClose={openCloseModal}
         title={titleModal}
         children={contentModal}
+       size="sm"
       />
     </div>
   );

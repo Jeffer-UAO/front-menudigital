@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { size } from "lodash";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 import { getOrderByTableApi } from "../../../../api/order";
+import { addTableCart } from "../../../../api/cart";
 import { ORDER_STATUS } from "../../../../utils/constants";
 import { usePayment } from "../../../../hooks";
+import { useHistory } from "react-router-dom";
 
 import { GiRoundTable } from "react-icons/gi";
-import { GiTable } from "react-icons/gi";
 
 import "./TableAdmin.scss";
 
 export function TableAdmin(props) {
   const { table, reload } = props;
+
+  const history = useHistory();
   const { getPaymentByTable } = usePayment();
   const [orders, setOrders] = useState([]);
+
   const [tableBusy, setTableBusy] = useState(false);
   const [pendingPayment, setPendingPayment] = useState(false);
 
@@ -48,43 +51,47 @@ export function TableAdmin(props) {
     })();
   }, [reload]);
 
+  const e = () => {
+    addTableCart(table.id);
+    history.push(`/admin/table/detail`);
+  };
+
   return (
-    <Link to={`/admin/table/${table.id}`}>
-      <main className="table_admin">
-        <article
-          className={classNames({
-            table_admin_pending: size(orders) > 0,
-            table_admin_free: size(orders) <= 0,
-            table_admin_delivery: tableBusy,
-          })}
-        >
-          <div className="orders-pending head">
-            <label>MESA</label>
-            <label> {table.number}</label>
-          </div>
+    <main className="table_admin" onClick={e}>
+      <article
+        className={classNames({
+          table_admin_pending: size(orders) > 0,
+          table_admin_free: size(orders) <= 0,
+          table_admin_delivery: tableBusy,
+        })}
+      >
+        <div className="orders-pending head">
+          {table.name ? <label>{table.name}</label> 
+          :
+          <p>MESA</p>} <h6>{table.number}</h6>
+        </div>
 
-          {pendingPayment ? (
-            <div className="orders-pending cuenta">
-              <label className="orders">CUENTA</label>
-            </div>
+        {pendingPayment ? (
+          <div className="orders-pending cuenta">
+            <label className="orders">CUENTA</label>
+          </div>
+        ) : (
+          <div className="orders-pending">
+            <label className="orders"></label>
+          </div>
+        )}
+        <div className="icon-table">
+          {size(orders) >= 0 && <GiRoundTable />}
+        </div>
+
+        <div className="pendiente">
+          {size(orders) > 0 ? (
+            <label> PENDIENTES: {size(orders)}</label>
           ) : (
-            <div className="orders-pending">
-              <label className="orders"></label>
-            </div>
+            <label></label>
           )}
-          <div className="icon-table">
-            {size(orders) >= 0 && <GiRoundTable />}           
-          </div>
-
-          <div className="pendiente">
-            {size(orders) > 0 ? (
-              <label> PENDIENTES: {size(orders)}</label>
-            ) : (
-              <label></label>
-            )}
-          </div>
-        </article>
-      </main>
-    </Link>
+        </div>
+      </article>
+    </main>
   );
 }

@@ -7,8 +7,10 @@ import {
 } from "../../components/Admin";
 import { ModalBasic } from "../../components/Common";
 import { useSauces } from "../../hooks";
+import { useParams, useHistory } from "react-router-dom";
 
 export function SauceAdmin() {
+  const history = useHistory();
   const { loading, getSauces, sauces, deleteSauces } = useSauces();
 
   const [showModal, setShowModal] = useState(false);

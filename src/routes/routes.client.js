@@ -1,25 +1,33 @@
 import { ClientLayout, BasicLayout } from "../layouts";
 import {
-  Home,
   SelectTable,
   Categories,
   Product,
   Detail,
   Cart,
   OrdersHistory,
+  Sauces,
+  Login,
+  Register,
 } from "../pages/Client";
 
 const routesClient = [
   {
-    path: "/:params",
-    layout: BasicLayout,
-    component: Home,
-    exact: true,
-  },
-  {
     path: "/",
     layout: BasicLayout,
     component: SelectTable,
+    exact: true,
+  },
+  {
+    path: "/login",
+    layout: BasicLayout,
+    component: Login,
+    exact: true,
+  },
+  {
+    path: "/register",
+    layout: BasicLayout,
+    component: Register,
     exact: true,
   },
   {
@@ -50,6 +58,12 @@ const routesClient = [
     path: "/client/:tableNumber/:idCategory/:idProduct",
     layout: ClientLayout,
     component: Detail,
+    exact: true,
+  },
+  {
+    path: "/client/:tableNumber/:idCategory/:idProduct/:sauce",
+    layout: ClientLayout,
+    component: Sauces,
     exact: true,
   },
 ];

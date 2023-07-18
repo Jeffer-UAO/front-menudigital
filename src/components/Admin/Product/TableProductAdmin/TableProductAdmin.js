@@ -8,9 +8,10 @@ import { BsSearch } from "react-icons/bs";
 import "./TableProductAdmin.scss";
 
 export function TableProductAdmin(props) {
-  const { products, updateProduct, deleteProduct, onReloadCard, getSaucesAct } =
+  const { products, updateProduct, deleteProduct, getSaucesAct } =
     props;
 
+   
   const [searchStr, setSearchStr] = useState("");
   const [newProducts, setNewProducts] = useState([]);
 
@@ -38,6 +39,10 @@ export function TableProductAdmin(props) {
     setNewProducts(result);
   };
 
+  function formatNumber(number) {
+    return new Intl.NumberFormat().format(number);
+  }
+
   return (
     <>
       <Search
@@ -57,7 +62,7 @@ export function TableProductAdmin(props) {
                 <CardImg src={product.image} alt="Card image cap" />
                 <CardBody>
                   <CardTitle>{product.title}</CardTitle>
-                  <CardSubtitle>$ {product.price}</CardSubtitle>
+                  <CardSubtitle>$ {formatNumber(product.price)}</CardSubtitle>
                 </CardBody>
               </div>
 
@@ -78,14 +83,14 @@ export function TableProductAdmin(props) {
 }
 
 function Action(props) {
-  const { product, updateProduct, deleteProduct, getSaucesAct } = props;
+  const { product, updateProduct, deleteProduct } = props;
   const { addProduct } = useCart();
   // <label onClick={getSaucesAct}>Agregar al carrito</label>
   //<label onClick={() => addProduct(product.id)}>Agregar al carrito</label>
   //<label onClick={getSaucesActive}>Agregar al carrito</label>
   return (
     <div className="actions">
-      //<label onClick={() => addProduct(product.id)}>Agregar al carrito</label>
+      <label onClick={() => addProduct(product.id)}></label>
       <hr />
       <label onClick={() => updateProduct(product)}>Editar</label>
       <label onClick={() => deleteProduct(product)}>Eliminar</label>
@@ -94,7 +99,7 @@ function Action(props) {
 }
 
 function Search(props) {
-  const { searchStr, setSearchStr, handleChange } = props;
+  const { handleChange } = props;
   // setSearchStr(searchStr);
   const clx = "white";
   return (

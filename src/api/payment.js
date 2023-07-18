@@ -1,6 +1,7 @@
-import { BASE_PATH, PAYMENT_STATUS } from "../utils/constants";
+import { BASE_API, PAYMENT_STATUS } from "../utils/constants";
 
-const BASE_API = localStorage.getItem(BASE_PATH);
+//const BASE_API = localStorage.getItem(BASE_PATH);
+
 
 export async function createPaymentApi(paymentData) {
   try {

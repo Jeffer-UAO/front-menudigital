@@ -2,12 +2,10 @@ import React from "react";
 import { CardImg, CardBody, CardTitle } from "reactstrap";
 import { map } from "lodash";
 import { AiOutlineMore } from "react-icons/ai";
-import { useCart } from "../../../../hooks";
 import "./TableCategoryAdmin.scss";
 
 export function TableCategoryAdmin(props) {
   const { categories, updateCategory, onDeleteCategory } = props;
-  console.log(props);
   return (
     <div className="table-category-admin containerBody">
       {map(categories, (category, index) => (

@@ -19,7 +19,7 @@ export function TableListAdmin(props) {
         onReload();
         setTimeout(() => {
           autoReloadAction();
-        }, 10000);
+        }, 5000);
       };
       autoReloadAction();
     }
@@ -58,8 +58,8 @@ export function TableListAdmin(props) {
         </div>
       </div>
       <div className="table-list-admin__orders">
-        {map(tables, (table) => (
-          <TableAdmin key={table.number} table={table} reload={reload} />
+        {map(tables, (table, index) => (
+          <TableAdmin key={index} table={table} reload={reload} />
         ))}
       </div>
     </div>

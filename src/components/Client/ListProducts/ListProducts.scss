@@ -1,50 +1,56 @@
 
 .list-products-client{
+    padding: 20px 5px 20px 5px;
     display: grid;    
-    gap: 20px 10px;
+    gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 
 &__product{    
-    border-radius: 10px;
-
-//    -webkit-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
-//    -moz-box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
-//    box-shadow: -3px 8px 17px -1px rgba(0,0,0,0.25);
-   
-
-    background: rgb(236, 236, 236);
- box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-
+    border-radius: 5px;
+    background-color: #fafafa0e;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+    
+    
+  color: aliceblue;
 
     &:hover{
         cursor: pointer;
         opacity: 0.7;
     }
     .card-img{
-        border-radius: 10px 10px 0 0;   
+        border-radius: 5px 5px 0 0;   
      
         height: 25vh;
         object-fit: cover;
         object-position: center center;           
     }
-    .card-body{     
-       
-            min-width: 100%;         
+    .card-body{          
+          text-align: end;
+          background-color: #252525;
+          -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+          -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+          box-shadow: 0px 0px 6px 0px rgba(169, 165, 165, 0.46);
+         //   min-width: 100%;       
+        //    padding: 0px 2px  5px 5px;
         .card-title{          
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: unset;     
-            font-size: 20px; 
-           
+            font-size: 20px;         
+            text-transform: lowercase;
+         
         }
         .card-subtitle{ 
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: unset;    
-           color: rgb(83, 79, 79);
+            color: #a1a406;
+            letter-spacing: 1px;
+            font-weight: bolder;
           
         }
     }

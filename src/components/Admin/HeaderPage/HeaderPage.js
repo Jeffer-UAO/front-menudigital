@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
 import { IoIosAddCircle } from "react-icons/io";
+import { AiOutlineGroup } from "react-icons/ai";
 
 import "./HeaderPage.scss";
 
@@ -20,7 +21,6 @@ export function HeaderPage(props) {
           <span className="btn-back">
             <TiArrowBack />
           </span>
-
           <p>Regresar</p>
         </div>
 
@@ -36,7 +36,7 @@ export function HeaderPage(props) {
         {btnTitleTwo && (
           <div className="my-btn">
             <span>
-              <IoIosAddCircle onClick={btnClickTwo} />
+              <AiOutlineGroup onClick={btnClickTwo} />
             </span>
             <label>{btnTitleTwo}</label>
           </div>

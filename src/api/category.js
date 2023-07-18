@@ -1,8 +1,8 @@
-import { BASE_PATH } from "../utils/constants";
+import { BASE_API } from "../utils/constants";
 
-const BASE_API = localStorage.getItem(BASE_PATH);
 
 export async function getCategoriesApi() {
+ 
   try {
     const url = `${BASE_API}/api/categories/`;
     const response = await fetch(url);
@@ -57,7 +57,6 @@ export async function updateCategoryApi(id, data, token) {
     throw error;
   }
 }
-
 
 export async function deleteCategoryApi(id, token) {
   try {

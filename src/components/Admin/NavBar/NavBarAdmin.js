@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../../hooks";
-import { GiTabletopPlayers } from "react-icons/gi";
 import { GiTable } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { BiCategoryAlt } from "react-icons/bi";

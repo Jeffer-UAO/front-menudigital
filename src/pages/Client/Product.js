@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useProduct } from "../../hooks";
 import { ListProducts } from "../../components/Client";
@@ -13,8 +13,8 @@ export function Product() {
 
   return (
     <>
-      {loading ? <p>Cargando...</p> : <p>Lista de productos</p>}
-      <ListProducts products={products} />
+      {loading ? <p>Cargando...</p> : <p></p>}
+      <ListProducts products={products}  />
     </>
   );
 }

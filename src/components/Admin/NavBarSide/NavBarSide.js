@@ -3,14 +3,16 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../../hooks";
 
-import { BsSearch } from "react-icons/bs";
+import { BsAlarm, BsSearch } from "react-icons/bs";
 import { BiCategoryAlt } from "react-icons/bi";
 import { GiSaucepan } from "react-icons/gi";
 import { CgMenu } from "react-icons/cg";
+import { BsCurrencyDollar } from "react-icons/bs";
+
+
 
 
 import { GiTable } from "react-icons/gi";
-import { GiReceiveMoney } from "react-icons/gi";
 import { GiHotMeal } from "react-icons/gi";
 import { CgReadme } from "react-icons/cg";
 
@@ -19,7 +21,7 @@ import { FaAddressCard } from "react-icons/fa";
 import "./NavBarSide.scss";
 
 export function NavBarSide() {
-  const { auth } = useAuth();
+  const { auth, logout } = useAuth();
 
   const [active, setActive] = useState(false);
 
@@ -77,7 +79,7 @@ export function NavBarSide() {
               >
                 <div className="a">
                   <i className="bx bx-grid-alt">
-                    <GiReceiveMoney />
+                    <BsCurrencyDollar />
                   </i>
                   <span className="links_name">Pagos</span>
                 </div>
@@ -147,15 +149,12 @@ export function NavBarSide() {
         <div className="profile_content">
           <div className="profile">
             <div className="profile_details">
-              <BsSearch />
-              <div className="name_job">
-                <div className="name">Prem Shahi</div>
-                <div className="job">Web Disigner</div>
-              </div>
-            </div>
-            <i className="bx" id="log_out">
-              <BsSearch />
+              
+              <i className="bx" id="log_out" onClick={logout}>
+            Salir
             </i>
+            </div>
+            
           </div>
         </div>
       </div>

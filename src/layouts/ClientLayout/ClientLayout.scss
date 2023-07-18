@@ -1,18 +1,96 @@
-.client-layout-bg{
-    background-color: #d9d9d9;
-    min-height: 100vh;
-    min-width: 50vh;
-    padding: 1em 0;
+h6 {
+  margin: 0;
 }
 
-.client-layout{
-    background-color: aliceblue;
-    padding: 10px;
+.client-content {
+  position: relative;
+  height: 93vh;
+  width: 100%;
+  // background-color: #fffdfd;
+  overflow: hidden;
+  background-color: #171a21db;
+  display: flex;
+  flex-direction: column;
 
-    &__header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
+  &__header {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    //    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    background-color: #fafafa0e;
+    svg {
+      color: #fffdfd;
     }
+    h3 {
+      color: yellow !important;
+    }
+  }
+  &__menu {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 0;
+    background-color: #fafafa0e;
+    //    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.46);
+    .back {
+      svg {
+        color: red;
+      }
+      text-align: center;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__body {
+    overflow: auto;
+    height: 100vh;
+    margin: 1px;
+    //  padding: 10px;
+
+    ::-webkit-scrollbar {
+      width: 2px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: rgb(0, 0, 0);
+      border-radius: 50px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgb(246, 246, 5);
+      border-radius: 50px;
+    }
+  }
+  &__footer {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 6px 0px rgba(233, 233, 233, 0.5);
+    padding: 0 20px;
+    margin: 0px;
+
+    background-color: #fafafa0e;
+
+    letter-spacing: 1px;
+
+    p {
+      position: absolute;
+      right: 18.5rem;
+      top: 45.5rem;
+      background-color: yellow;
+      border-radius: 50%;
+      width: 1.5rem;
+      color: black !important;
+      font-weight: bold;
+    }
+  }
+}
+
+.client-content .home {
+  position: absolute;
+  height: 100%;
 }

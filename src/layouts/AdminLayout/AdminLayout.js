@@ -3,8 +3,8 @@ import { LoginAdmin } from "../../pages/Admin";
 import { useAuth } from "../../hooks";
 import {
   TopMenu,
-  NavBarAdmin,
-  FooterAdmin,
+  //NavBarAdmin,
+  //FooterAdmin,
   NavBarSide,
 } from "../../components/Admin";
 

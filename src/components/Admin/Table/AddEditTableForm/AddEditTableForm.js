@@ -6,7 +6,7 @@ import { Form, Button, Input } from "reactstrap";
 import "./AddEditTableForm.scss";
 
 export function AddEditTableForm(props) {
-  const { addTable, updateTable, onDeleteTable } = useTable();
+  const { addTable, updateTable} = useTable();
   const { onClose, onRefetch, table } = props;
 
   const formik = useFormik({
@@ -24,7 +24,17 @@ export function AddEditTableForm(props) {
 
   return (
     <Form className="add-edit-table-form" onSubmit={formik.handleSubmit}>
-      <Input
+      <Input className="control"
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Nombre"
+        value={formik.values.name}
+        onChange={formik.handleChange}
+        error={formik.errors.name}
+      />
+
+      <Input className="control"
         id="number"
         name="number"
         type="number"
@@ -34,7 +44,7 @@ export function AddEditTableForm(props) {
         error={formik.errors.number}
       />
 
-      <Button type="submit" active color="success" block>
+      <Button className="control" type="submit" active color="success" block>
         Guardar
       </Button>
     </Form>
@@ -44,11 +54,13 @@ export function AddEditTableForm(props) {
 function initialValues(data) {
   return {
     number: data?.number || "",
+    name: data?.name || "",
   };
 }
 
 function validationSchema() {
   return {
     number: Yup.number().required(true),
+    name: Yup.string(),
   };
 }
