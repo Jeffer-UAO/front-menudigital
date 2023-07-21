@@ -1,33 +1,38 @@
-p,h1,h2,h3,h6,a, span{
-    margin: 0;    
-    padding: 0;
-    text-decoration: none !important;
-    font-family: "Poppins", sans-serif;
- //   font-family: Arial, sans-serif;
-    color: rgb(255, 255, 255) !important;
-
+p,
+h1,
+h2,
+h3,
+h6,
+a,
+ul,
+li,
+span {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif;
+     font-family: Arial, sans-serif;
+  color: #fbfbfb !important;
 }
 
-
-.all-header{    
-   
+.all-header {
 }
 
-.all-container{
-
+.all-container {
 }
 
-.all-title{      
-    font-size: 20px;
-    color: rgb(184, 183, 174);
+.all-title {
+  font-size: 20px;
+  color: rgb(184, 183, 174);
 }
 
-.header-page{  
-    position: fixed;  
-   width: 97%;  
-   z-index: 3;   
+.header-page {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 
-.containerBody{
-    padding-top: 4rem;
+.containerBody {
+  padding-top: 1rem;
 }

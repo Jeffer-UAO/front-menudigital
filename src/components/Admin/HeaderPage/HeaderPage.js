@@ -1,5 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+
+import { TopMenu } from "../TopMenu/TopMenu";
+
 import { TiArrowBack } from "react-icons/ti";
 import { IoIosAddCircle } from "react-icons/io";
 import { AiOutlineGroup } from "react-icons/ai";
@@ -15,35 +18,37 @@ export function HeaderPage(props) {
   }
 
   return (
-    <div className="header-page-admin all-header">
-      <div className="btn-header-page">
-        <div className="my-btn" onClick={goBackHandle}>
-          <span className="btn-back">
+    <div className="header">
+      <div className="header-page-admin all-header">
+        
+        <div className="btn-header-page">
+
+          <div className="my-btn" onClick={goBackHandle}>
             <TiArrowBack />
-          </span>
-          <p>Regresar</p>
+          </div>
+
+          {btnTitle && (
+            <div className="my-btn" onClick={btnClick}>
+              <IoIosAddCircle />
+              <p>{btnTitle}</p>
+            </div>
+          )}
+
+          {btnTitleTwo && (
+            <div className="my-btn" onClick={btnClickTwo}>
+              <AiOutlineGroup />
+              <p>{btnTitleTwo}</p>
+            </div>
+          )}
         </div>
 
-        {btnTitle && (
-          <div className="my-btn">
-            <span className="btn-add">
-              <IoIosAddCircle onClick={btnClick} />
-            </span>
-
-            <label>{btnTitle}</label>
-          </div>
-        )}
-        {btnTitleTwo && (
-          <div className="my-btn">
-            <span>
-              <AiOutlineGroup onClick={btnClickTwo} />
-            </span>
-            <label>{btnTitleTwo}</label>
-          </div>
-        )}
+        <div className="title-page">
+          <TopMenu />
+        </div>
       </div>
-      <div className="title-page">
-        <h1 className="all-title">{title}</h1>
+
+      <div className="button-menu">
+        <h6 className="all-title">{title}</h6>
       </div>
     </div>
   );

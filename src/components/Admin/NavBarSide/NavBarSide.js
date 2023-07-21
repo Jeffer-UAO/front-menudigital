@@ -3,14 +3,11 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../../hooks";
 
-import { BsAlarm, BsSearch } from "react-icons/bs";
+import { GrRestaurant } from "react-icons/gr";
 import { BiCategoryAlt } from "react-icons/bi";
 import { GiSaucepan } from "react-icons/gi";
 import { CgMenu } from "react-icons/cg";
 import { BsCurrencyDollar } from "react-icons/bs";
-
-
-
 
 import { GiTable } from "react-icons/gi";
 import { GiHotMeal } from "react-icons/gi";
@@ -34,15 +31,15 @@ export function NavBarSide() {
       })}
     >
       <div className="logo_content">
-        <div className="logo">
-          <i className="bx bxl-c-plus-plus"></i>
-          <div className="logo_name">
-            <h4>PICAPIEDRA</h4>
+        <div className="btn-menu">
+          <div className="logo">            
+              <GrRestaurant size={60} />           
           </div>
+          <i className="icon" id="btn" onClick={changeClass}>
+            <CgMenu />
+          </i>
         </div>
-        <i className="" id="btn" onClick={changeClass}>
-          <CgMenu />
-        </i>
+
         <div className="link">
           <ul className="nav_list">
             <li>
@@ -71,7 +68,6 @@ export function NavBarSide() {
                 </div>
               </NavLink>
             </li>
-
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -85,7 +81,6 @@ export function NavBarSide() {
                 </div>
               </NavLink>
             </li>
-
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -144,18 +139,6 @@ export function NavBarSide() {
               )}
             </li>
           </ul>
-        </div>
-
-        <div className="profile_content">
-          <div className="profile">
-            <div className="profile_details">
-              
-              <i className="bx" id="log_out" onClick={logout}>
-            Salir
-            </i>
-            </div>
-            
-          </div>
         </div>
       </div>
     </div>

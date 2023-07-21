@@ -1,60 +1,47 @@
-.header-page-admin{     
+
+.button-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #f2b63d;
+  h6 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+.header-page-admin {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2b63d;
+  padding: 0.3rem;
+
+  .btn-header-page {
     display: flex;
-    justify-content: space-between;
-    background-color: rgb(130, 4, 4);
-background-image: linear-gradient(360deg,#0f1111,rgb(222, 222, 14));
-padding-top: 10px;
-    
-    .btn-header-page{
-        display: flex; 
-        
 
-        svg{
-            display: flex;           
-            align-items: center;            
-            font-size: 25px; 
-        }
-        
-       .my-btn{
-        display: flex; 
-        align-items: center;
-        text-align: center;        
-        border-radius: 20px;
-        background-image: linear-gradient(160deg,#ffffff20,rgb(0, 0, 0));
-        box-shadow: 2px 3px 5px rgba(157, 189, 138, 0.4); 
-        color: rgb(255, 255, 255);
-        padding: 0 10px 3px 10px;
-        margin: 5px;
-        border: solid 1px rgba(245, 245, 245, 0.463);  
-        
-        &:hover{     
-            background-image: linear-gradient(360deg,#00718574,rgba(0, 0, 0, 0.618));   
-        color: yellowgreen; 
-            transition: all 0.2s linear;
-            cursor: pointer;    
-                 
-        }
-       
-       span{
-          margin: 0; 
-          padding: 0;
-           
-       }
-       label{
-       
-          
-        }        
-       }
-        
+    svg {
+      display: flex;
+      align-items: center;
+      font-size: 25px;
+      color: #1f2126;
     }
-  
-   
-    .title-page{
-       margin-right: 20px;
-       text-align: end;
-       h2{
-           font-size: 20px;
-       }
-    }   
 
+    .my-btn {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      border-radius: 0.5rem;
+      box-shadow: 2px 3px 5px rgba(3, 3, 3, 0.4);
+      padding: 0.5rem;
+      border: solid 1px #ffffff;
+      margin: 0.1rem;
+      height: 3rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

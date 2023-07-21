@@ -19,8 +19,7 @@ import {
   HeaderPage,
   AddSalesman,
 } from "../../components/Admin";
-import { IoLogoCss3 } from "react-icons/io";
-import "./Admin.scss";
+
 
 export function CardAdmin() {
   const { auth } = useAuth();
@@ -95,9 +94,8 @@ export function CardAdmin() {
         for (var i = 0; i < products.length; i++) {
           const resp = await addOrderToTable(Object.assign(products[i], sall));
 
-          for (var f = 0; f < products[i].sauce.length; f++) {           
+          for (var f = 0; f < products[i].sauce.length; f++) {
             await addSaucesOrder(resp.id, products[i].sauce[f].sauces);
-            
           }
         }
       } else {

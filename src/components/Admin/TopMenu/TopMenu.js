@@ -2,7 +2,9 @@ import { size } from "lodash";
 import React from "react";
 import { useAuth, useCart } from "../../../hooks";
 
-import { FaOpencart } from "react-icons/fa";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaUserShield } from "react-icons/fa";
+
 import { useHistory } from "react-router-dom";
 
 import "./TopMenu.scss";
@@ -14,7 +16,7 @@ export function TopMenu() {
   const { products } = useCart();
 
   console.log(products);
-  
+
   const renderName = () => {
     if (auth.me?.first_name && auth.me?.last_name) {
       return `${auth.me.first_name} ${auth.me.last_name}`;
@@ -36,16 +38,17 @@ export function TopMenu() {
   }
 
   return (
-    <div className="top-menu-admin">
-      <div className="top-menu-admin__car">
-        <span>Bienvenido: {renderName()} </span>
-        
-        <div className="car" onClick={goToCar}>
-          <FaOpencart size={30} />
-          <p>{size(products)}</p>
-        </div>
+    <div className="top-menu-admin__car">
 
-        <div onClick={closeSection} className="logout"><p>Salir</p></div>
+      {/* <span>{renderName()} </span> */}
+
+      <div className="car btn" onClick={goToCar}>
+        <AiOutlineShoppingCart size={25} />
+        <p>{size(products)}</p>
+      </div>
+
+      <div onClick={closeSection} className="logout btn">
+        <FaUserShield size={25} />
       </div>
     </div>
   );

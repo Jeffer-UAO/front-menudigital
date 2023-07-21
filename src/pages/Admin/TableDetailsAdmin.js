@@ -90,7 +90,7 @@ export function TableDetailsAdmin() {
       <ModalBasic
         show={showModal}
         onClose={openCloseModal}
-        title="Detalle"
+        title="Categoría"
      //   size="sm"
       >
         {paymentData ? (

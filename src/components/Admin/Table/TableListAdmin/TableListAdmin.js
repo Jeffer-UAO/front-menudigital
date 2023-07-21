@@ -38,7 +38,7 @@ export function TableListAdmin(props) {
       <div className="table-list-admin__header">
         <div className="table-list-admin__reload-toggle">
           <div>
-            <i className="title">Sincronización Automática</i>
+            <i className="title">Automática</i>
           </div>
           <label className="switch">
             <input
@@ -51,7 +51,7 @@ export function TableListAdmin(props) {
           </label>
         </div>
         <div>
-          <i className="title">Sincronización Manual</i>
+          <i className="title">Manual</i>
         </div>
         <div className="table-list-admin__btn_async">
           <AiOutlineSync size="25" color="red" onClick={onReload} />

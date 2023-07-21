@@ -49,7 +49,6 @@ export function ListOrderAdmin(props) {
     setOrderToUser(listUsers.concat(listUsersTemp));
   }, []);
 
-  console.log(orders);
   return (
     <>
       <div className="">

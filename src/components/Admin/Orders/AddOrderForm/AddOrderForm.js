@@ -13,8 +13,7 @@ export function AddOrderForm() {
   }, []);
 
   return (
-    <Form className="add-order-form">
-      <div></div>
+    <Form className="add-order-form">    
       <ListCategoryAdmin categories={categories} />
     </Form>
   );

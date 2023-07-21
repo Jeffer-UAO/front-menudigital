@@ -5,7 +5,7 @@ import "moment/locale/es";
 import React, { useEffect } from "react";
 import { BsAlarm } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
-import { CardImg } from "reactstrap";
+import { Button, CardImg } from "reactstrap";
 import { useOrder, useSauces } from "../../../../hooks";
 import { ORDER_STATUS } from "../../../../utils/constants";
 
@@ -37,14 +37,75 @@ export function OrderItemAdmin(props) {
   };
 
   return (
-    <>
-      {(cust === order.user) && (
-        <div        
+    <div className="order">
+      {cust === order.user && (
+        <div
           className={classNames("order-item-admin", {
             [order.status.toLowerCase()]: true,
           })}
         >
-          <div className="order-item-admin__time">     
+          <div className="order-item-admin__time">
+            <span>{moment(order.create_at).format("HH:mm")}</span> {" - "}
+            <span>
+              {moment(order.create_at).startOf("secods").fromNow()}
+            </span>{" "}
+            <BsAlarm size={15} />
+          </div>
+
+          <div className="order-item-admin__product">
+            <div>
+              <CardImg src={image} />
+            </div>
+            <div className="description">
+              <div className="number-order">
+                <label>Pedido No. {order.number} </label>
+                <div className="delete-item" onClick={deletedOrder}>
+                  <MdDeleteForever size={25} />
+                </div>
+              </div>
+
+              <h5>{order.product_data.title}</h5>
+              <h5>
+                Cantidad <label>{order.qty}</label>
+              </h5>
+            </div>
+          </div>
+          <div className="sauce-comment">
+            <div className="sauce">
+              {map(sauceByOrder, (sauce, index) => (
+                <div className="items" key={index}>
+                  {sauce.description}
+                </div>
+              ))}
+            </div>
+            <div className="comment">
+              Nota: <label>{order.comment}</label>
+            </div>
+          </div>
+          <div className="btn-ations">
+            {order.status === ORDER_STATUS.PENDIENTE && (
+              <div className="action">
+                <Button
+                  active
+                  block
+                  color="dark"
+                  onClick={onCheckDeliveredOrder}
+                >
+                  Entregar este producto
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {cust === order.userTemp && (
+        <div
+          className={classNames("order-item-admin", {
+            [order.status.toLowerCase()]: true,
+          })}
+        >
+          <div className="order-item-admin__time">
             <span>{moment(order.create_at).format("HH:mm")}</span> {" - "}
             <span>
               {moment(order.create_at).startOf("secods").fromNow()}
@@ -65,7 +126,9 @@ export function OrderItemAdmin(props) {
               </div>
 
               <h5>{order.product_data.title}</h5>
-              <h5>Cantidad <label>{order.qty}</label></h5>
+              <h5>
+                Cantidad <label>{order.qty}</label>
+              </h5>
             </div>
           </div>
           <div className="sauce-comment">
@@ -81,70 +144,21 @@ export function OrderItemAdmin(props) {
             </div>
           </div>
           <div className="btn-ations">
-            {order.status === ORDER_STATUS.PENDIENTE ? (
+            {order.status === ORDER_STATUS.PENDIENTE && (
               <div className="action">
-                <button onClick={onCheckDeliveredOrder}>Entregar este producto</button>
+                <Button
+                  active
+                  block
+                  color="dark"
+                  onClick={onCheckDeliveredOrder}
+                >
+                  Entregar este producto
+                </Button>
               </div>
-            ) : (
-              <span>ENTREGADO</span>
             )}
           </div>
         </div>
       )}
-
-      {(cust === order.userTemp) && (
-        <div
-          className={classNames("order-item-admin", {
-            [order.status.toLowerCase()]: true,
-          })}
-        >
-          <div className="order-item-admin__time">
-            <span>{moment(order.create_at).format("HH:mm")}</span> {" - "}        
-            <span>
-              {moment(order.create_at).startOf("secods").fromNow()}
-            </span>{" "}
-            <BsAlarm />
-          </div>
-
-          <div className="order-item-admin__product">
-            <div>
-              <CardImg src={image} />
-            </div>
-            <div className="description">
-              <div className="number-order">
-                <label>Pedido No. {order.number} </label>
-                <div className="delete-item" onClick={deletedOrder}>
-                  <MdDeleteForever size={22} />
-                </div>
-              </div>
-
-              <h5>{order.product_data.title}</h5>
-              <h5>Cantidad <label>{order.qty}</label></h5>
-            </div>
-          </div>
-          <div className="sauce-comment">
-            <div className="sauce">
-              {map(sauceByOrder, (sauce, index) => (
-                <div className="items" key={index}>
-                  {sauce.description}
-                </div>
-              ))}
-            </div>
-            <div className="comment">
-              Nota: <label>{order.comment}</label>
-            </div>
-          </div>
-          <div className="btn-ations">
-            {order.status === ORDER_STATUS.PENDIENTE ? (
-              <div className="action">
-                <button onClick={onCheckDeliveredOrder}>Entregar este producto</button>
-              </div>
-            ) : (
-              <span>ENTREGADO</span>
-            )}
-          </div>
-        </div>
-      )}
-    </>
+    </div>
   );
 }
