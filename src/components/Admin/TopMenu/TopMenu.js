@@ -39,7 +39,6 @@ export function TopMenu() {
 
   return (
     <div className="top-menu-admin__car">
-
       {/* <span>{renderName()} </span> */}
 
       <div className="car btn" onClick={goToCar}>

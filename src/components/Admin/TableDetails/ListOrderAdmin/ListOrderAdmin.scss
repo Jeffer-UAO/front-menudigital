@@ -4,9 +4,22 @@
     border-radius: 0.5rem;
     margin: 1rem;
 
+    .list-order__item {
+      border: 2px solid  rgb(75, 89, 136);
+      padding: 1rem;
+     
+      border-radius: 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); 
+      gap: 2rem;
+     
+    }
+
+   
+
     &-header {
       padding: 0.5rem;
-      background-color: #f2b63d;
+      background-color: #f5f5f821;
       border-radius: 0.5rem 0.5rem 0 0;
 
       label {
@@ -19,23 +32,10 @@
       justify-content: center;
       text-align: center;
 
-      .button-action {
-        color: rgba(255, 243, 240, 0.596);
-        padding: 3px 20px;
+      button{
+
         margin: 0.5rem;
-        border-radius: 0.5rem;
-        //   box-shadow: 5px 5px 1px 0px rgb(18, 18, 35);
-        border: solid 1px;
-        &:hover {
-          background-color: rgba(255, 238, 4, 0.093);
-        }
       }
     }
-  }
-
-  &__item {  
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-
   }
 }

@@ -2,20 +2,22 @@ import classNames from "classnames";
 import { map } from "lodash";
 import moment from "moment";
 import "moment/locale/es";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BsAlarm } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
-import { Button, CardImg } from "reactstrap";
+import { Button, CardImg, Spinner } from "reactstrap";
 import { useOrder, useSauces } from "../../../../hooks";
 import { ORDER_STATUS } from "../../../../utils/constants";
 
 import "./OrderItemAdmin.scss";
 
 export function OrderItemAdmin(props) {
+  const { cust, order, onReloadOrders } = props;
   const { checkDeliveredOrder, deleteOrderToIdOrder } = useOrder();
   const { sauceByOrder, getSaucesByOrderId } = useSauces();
-  const { cust, order, onReloadOrders } = props;
   const { image } = order.product_data;
+
+  const [loading, setLoading ] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -24,6 +26,7 @@ export function OrderItemAdmin(props) {
   }, []);
 
   const onCheckDeliveredOrder = async () => {
+    setLoading(true);
     await checkDeliveredOrder(order.id);
     onReloadOrders();
   };
@@ -53,9 +56,7 @@ export function OrderItemAdmin(props) {
           </div>
 
           <div className="order-item-admin__product">
-            <div>
-              <CardImg src={image} />
-            </div>
+            <CardImg src={image} />
             <div className="description">
               <div className="number-order">
                 <label>Pedido No. {order.number} </label>
@@ -85,14 +86,20 @@ export function OrderItemAdmin(props) {
           <div className="btn-ations">
             {order.status === ORDER_STATUS.PENDIENTE && (
               <div className="action">
-                <Button
-                  active
-                  block
-                  color="dark"
-                  onClick={onCheckDeliveredOrder}
-                >
-                  Entregar este producto
-                </Button>
+                {loading ? (
+                  <Button disabled block>
+                    <Spinner>Cargando...</Spinner>
+                  </Button>
+                ) : (
+                  <Button
+                    active
+                    block
+                    color="success"
+                    onClick={onCheckDeliveredOrder}
+                  >
+                    Entregar este producto
+                  </Button>
+                )}
               </div>
             )}
           </div>
@@ -146,14 +153,20 @@ export function OrderItemAdmin(props) {
           <div className="btn-ations">
             {order.status === ORDER_STATUS.PENDIENTE && (
               <div className="action">
-                <Button
-                  active
-                  block
-                  color="dark"
-                  onClick={onCheckDeliveredOrder}
-                >
-                  Entregar este producto
-                </Button>
+                 {loading ? (
+                  <Button disabled block>
+                    <Spinner>Cargando...</Spinner>
+                  </Button>
+                ) : (
+                  <Button
+                    active
+                    block
+                    color="success"
+                    onClick={onCheckDeliveredOrder}
+                  >
+                    Entregar este producto
+                  </Button>
+                )}
               </div>
             )}
           </div>

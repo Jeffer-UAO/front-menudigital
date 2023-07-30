@@ -1,9 +1,22 @@
 .add-sauce-to-product {
   &__sauces {
+    
+    padding: 0;
     .sauce {
-      border-radius: 10px;
-      background-color: rgb(52, 71, 56);
-      
+      padding: 0 0 0 5px;
+      border-radius: 1rem;
+      background-color: rgb(226, 226, 221);
+      color: #2a2e59;
+      font-weight: 600;
+      text-transform: uppercase;
+     
+      .button{
+          background-color: #2a2e59;
+          border: solid 1px #2a2e59;
+          border-radius: 1rem;
+
+   
+      }
     }
   }
 }
@@ -12,13 +25,14 @@
   //   padding: 10px;
   // background-color: rgb(54, 54, 54);
  // border-bottom: 2px solid yellow;
-  color: aliceblue;
+  // color: aliceblue;
 
   .sauce-options{    
+    
   //  border: solid 1px white;
-    padding: 3px 10px 3px 10px;
-    border-radius: 5px;
-    width: 105px;
-    box-shadow: 0px 1px 3px 1px rgb(255, 255, 255);
+    // padding: 3px 10px 3px 10px;
+    // border-radius: 5px;
+    // width: 105px;
+    // box-shadow: 0px 1px 3px 1px rgb(255, 255, 255);
   }
 }

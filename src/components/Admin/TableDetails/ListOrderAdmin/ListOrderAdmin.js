@@ -2,6 +2,7 @@ import { forEach, map } from "lodash";
 import React, { useEffect, useState } from "react";
 import { OrderItemAdmin } from "../";
 import { useOrder } from "../../../../hooks";
+import { Button, Spinner } from "reactstrap";
 
 import "./ListOrderAdmin.scss";
 
@@ -9,8 +10,11 @@ export function ListOrderAdmin(props) {
   const { checkDeliveredOrder, deleteOrderToIdOrder } = useOrder();
   const { orders, onReloadOrders } = props;
   const [orderToUser, setOrderToUser] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
 
   const onCheckDeliveredOrder = async (orderUser) => {
+    setLoading(true);
     for await (const order of orders) {
       if (order.user === orderUser && order.status !== "ENTREGADO") {
         await checkDeliveredOrder(order.id);
@@ -27,6 +31,7 @@ export function ListOrderAdmin(props) {
   };
 
   const deletedOrder = async (orderUser) => {
+    setLoading2(true);
     for await (const order of orders) {
       if (order.user === orderUser) {
         await deleteOrderToIdOrder(order.id);
@@ -71,18 +76,30 @@ export function ListOrderAdmin(props) {
               </div>
 
               <div className="actions-orders">
-                <label
-                  className="button-action delete"
-                  onClick={() => deletedOrder(orderUser)}
-                >
-                  Eliminar todo
-                </label>
-                <label
-                  className="button-action delivery"
-                  onClick={() => onCheckDeliveredOrder(orderUser)}
-                >
-                  Entregar todo
-                </label>
+                {loading2 ? (
+                  <Button block disabled>
+                    <Spinner>Cargando...</Spinner>
+                  </Button>
+                ) : (
+                  <Button block onClick={() => deletedOrder(orderUser)}>
+                    Eliminar todo
+                  </Button>
+                )}
+
+                {loading ? (
+                  <Button disabled block>
+                    <Spinner>Cargando...</Spinner>
+                  </Button>
+                ) : (
+                  <Button
+                    active
+                    block
+                    color="success"
+                    onClick={() => onCheckDeliveredOrder(orderUser)}
+                  >
+                    Entregar todo
+                  </Button>
+                )}
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { AddSaucesToProductAdmin } from "../../../../components/Admin";
 import { toast } from "react-toastify";
 import {
   Button,
+  Card,
   CardBody,
   CardImg,
   CardSubtitle,
@@ -51,49 +52,57 @@ export function DetailProductAdmin(props) {
   };
 
   return (
-    <div className="detail-product-admin">
-      <div className="mod-content">
-        <div className="mod-image">
-          <CardImg src={product.image} alt="Card image cap" />
-        </div>
-        <div className="mod-sauce">
-          <CardBody>
-            <CardTitle>{product.title}</CardTitle>
-            <CardSubtitle>$ {formatNumber(product.price)}</CardSubtitle>
-          </CardBody>
-          <CardText>{product.description}</CardText>
-        </div>
-      </div>
-      <div className="botones">
-        <AddSaucesToProductAdmin addSauce={addSauce} product={product.id} />
-        <div className="price-init__cant">
-          <label>CANTIDAD</label>
-          <div className="drive-cant">
-            <label onClick={() => updateCant(-1)}>-</label>
-            <input
-              type="number"
-              max={9}
-              min={1}
-              readOnly
-              //onChange={(e) => setCant(e.target.value)}
-              value={amount}
-            />
+    <>
+      <div className="admin-detail-product">
+        <div className="mod-content">
+          <div className="list">
+            <Card>
+              <CardImg src={product.image} alt="Card image cap" />
 
-            <label onClick={() => updateCant(1)}>+</label>
+              <CardBody>
+                <CardTitle>{product.title}</CardTitle>
+                <CardSubtitle>$ {formatNumber(product.price)}</CardSubtitle>
+                <CardText>{product.description}</CardText>
+              </CardBody>
+            </Card>
           </div>
         </div>
-        <div className="add-sauce-to-product__comment">
-          <h6>Comentario Adicional:</h6>
-          <textarea
-            name="comentario"
-            onChange={(e) => setComment(e.target.value)}
-          ></textarea>
-        </div>
 
-        <div className="btn-send" onClick={() => addCart(dataOrder)}>
-          Adiccionar al Carrito
+        <div className="botones">
+          <AddSaucesToProductAdmin addSauce={addSauce} product={product.id} />
+          <div className="price-init__cant">
+            <label>CANTIDAD</label>
+            <div className="drive-cant">
+              <label onClick={() => updateCant(-1)}>-</label>
+              <input
+                type="number"
+                max={9}
+                min={1}
+                readOnly
+                //onChange={(e) => setCant(e.target.value)}
+                value={amount}
+              />
+
+              <label onClick={() => updateCant(1)}>+</label>
+            </div>
+          </div>
+          <div className="add-sauce-to-product__comment">
+            <h6>Comentario Adicional:</h6>
+            <textarea
+              name="comentario"
+              onChange={(e) => setComment(e.target.value)}
+            ></textarea>
+          </div>
         </div>
       </div>
-    </div>
+      <Button
+        block
+        color="success"
+        className="btn-send"
+        onClick={() => addCart(dataOrder)}
+      >
+        Agregar al Carrito
+      </Button>
+    </>
   );
 }

@@ -33,7 +33,7 @@ export function AddEditSaucesForm(props) {
   return (
     <Form className="add-edit-sauce-form" onSubmit={formik.handleSubmit}>
       <InputGroup className="input">
-        <InputGroupText>Salsa:</InputGroupText>
+      
         <Input
           id="description"
           name="description"

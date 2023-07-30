@@ -54,11 +54,7 @@ export function TableProductAdmin(props) {
         {newProducts &&
           map(newProducts, (product, index) => (
             <div className="cart" key={index}>
-              <div
-                className="table-product-admin__product"
-                // onClick={() => updateProduct(product)}
-                //  onClick={() => goToProductDetail(product.id)}
-              >
+              <div>
                 <CardImg src={product.image} alt="Card image cap" />
                 <CardBody>
                   <CardTitle>{product.title}</CardTitle>
@@ -85,9 +81,6 @@ export function TableProductAdmin(props) {
 function Action(props) {
   const { product, updateProduct, deleteProduct } = props;
   const { addProduct } = useCart();
-  // <label onClick={getSaucesAct}>Agregar al carrito</label>
-  //<label onClick={() => addProduct(product.id)}>Agregar al carrito</label>
-  //<label onClick={getSaucesActive}>Agregar al carrito</label>
   return (
     <div className="actions">
       <label onClick={() => addProduct(product.id)}></label>

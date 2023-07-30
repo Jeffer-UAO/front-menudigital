@@ -86,7 +86,7 @@ export function TableAdmin(props) {
 
         <div className="pendiente">
           {size(orders) > 0 ? (
-            <label> PENDIENTES: {size(orders)}</label>
+            <label> PENDIENTE: {size(orders)}</label>
           ) : (
             <label></label>
           )}

@@ -31,8 +31,10 @@ export function TableDetailsAdmin() {
 
   useEffect(() => {
     (async () => {
-      const response = await getPaymentByTable(id);
-      if (size(response) > 0) setPaymentData(response[0]);
+      
+        const response = await getPaymentByTable(id);
+        if (size(response) > 0) setPaymentData(response[0]);
+ 
     })();
   }, [reloadOrders]);
 
@@ -70,14 +72,16 @@ export function TableDetailsAdmin() {
     }
   };
 
+  console.log(orders);
+
   return (
     <div className="all-container">
-      <div>
+      <div className="header-page">
         <HeaderPage
           title={`Mesa ${table?.number || ""}`}
           btnTitle={paymentData ? "Ver cuenta" : "Nuevo Pedido"}
           btnClick={openCloseModal}
-          btnTitleTwo={!paymentData ? "Generar cuenta" : null}
+          btnTitleTwo={size(orders) > 0 && !paymentData ? "Generar cuenta" : null}
           btnClickTwo={onCreatePayment}
         />
       </div>
@@ -90,15 +94,15 @@ export function TableDetailsAdmin() {
       <ModalBasic
         show={showModal}
         onClose={openCloseModal}
-        title="Categoría"
-     //   size="sm"
+        title="Categorías"
+        //   size="sm"
       >
         {paymentData ? (
           <PaymentDetail
             payment={paymentData}
             orders={orders}
             openCloseModal={openCloseModal}
-            onReloadOrders={onReloadOrders}           
+            onReloadOrders={onReloadOrders}
           />
         ) : (
           <AddOrderForm

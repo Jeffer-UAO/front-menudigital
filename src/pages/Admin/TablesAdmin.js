@@ -24,7 +24,7 @@ export function TablesAdmin() {
   const onRefetch = () => setRefetch((prev) => !prev);
 
   const addTable = () => {
-    setTitleModal("Crear Mesa o Tipo");
+    setTitleModal("Nueva Mesa o Tipo");
     setContentModal(
       <AddEditTableForm onClose={openCloseModal} onRefetch={onRefetch} />
     );
@@ -55,9 +55,7 @@ export function TablesAdmin() {
     <div className="all-container">
       <div className="header-page">
         <HeaderPage
-          title="Mesas"
-          btnTitle="Nueva Mesa o Tipo"
-          btnClick={addTable}
+          title="Mesas"        
         />
       </div>
       <div className="containerBody">
@@ -69,6 +67,7 @@ export function TablesAdmin() {
               tables={tables}
               updateTable={updateTable}
               onDeleteTable={onDeleteTable}
+              addTable={addTable}
             />
           )}
         </div>

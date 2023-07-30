@@ -20,9 +20,7 @@ export function HeaderPage(props) {
   return (
     <div className="header">
       <div className="header-page-admin all-header">
-        
         <div className="btn-header-page">
-
           <div className="my-btn" onClick={goBackHandle}>
             <TiArrowBack />
           </div>

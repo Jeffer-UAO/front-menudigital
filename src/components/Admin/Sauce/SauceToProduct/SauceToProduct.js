@@ -20,29 +20,24 @@ export function SauceToProduct(props) {
     deleteSaucesToProduct,
   } = props;
 
- 
   const [saucesClone, setSaucesClone] = useState(saucesOldId);
   const [indexSauce, setIndexSauce] = useState(saucesIndex);
   const { getSauceToProduct } = useSauces();
   //  const [sauceNew, setSauceNew] = useState(saucesOldId);
 
-
- 
-
   const updateSaucesToProduct = async (sauce) => {
-    
     let index = indexSauce.indexOf(sauce.id);
 
-    if (index > -1) {      
+    if (index > -1) {
       saucesClone.splice(index, 1);
-      indexSauce.splice(index, 1);   
+      indexSauce.splice(index, 1);
       if (idProduct > 0) {
         const result = await getSauceToProduct(idProduct, sauce.id);
         await deleteSaucesToProduct(result[0].id);
       }
-    } else {      
+    } else {
       indexSauce.push(sauce.id);
-      saucesClone.push(sauce);     
+      saucesClone.push(sauce);
       if (idProduct > 0) {
         await addSaucesToProduct(idProduct, sauce.id, sauce.description);
       }

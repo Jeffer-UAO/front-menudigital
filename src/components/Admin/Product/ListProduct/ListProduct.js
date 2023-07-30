@@ -3,7 +3,7 @@ import { map } from "lodash";
 import { ModalBasic } from "../../../Common/ModalBasic";
 import { DetailProductAdmin } from "../../Product";
 
-import { CardBody, CardImg } from "reactstrap";
+import { CardBody, Card, CardImg, CardSubtitle } from "reactstrap";
 
 import "./ListProduct.scss";
 
@@ -29,25 +29,26 @@ export function ListProduct(props) {
   const openCloseModal = () => setShowModal((prev) => !prev);
 
   return (
-    <div className="list-products-client">
+    <div className="admin-product">
       {map(products, (product) => (
         <div
           key={product.id}
-          className="list-products-client__product"
+          className="list"
           onClick={() => getProductDetail(product.id)}
         >
+          <Card>
           <CardImg src={product.image} alt="Card image cap" />
-          <CardBody>
-            <h6>{product.title}</h6>
-            <label>$ {formatNumber(product.price)}</label>
-          </CardBody>
+          <CardBody>{product.title}</CardBody>
+          <CardSubtitle>$ {formatNumber(product.price)}</CardSubtitle>
+
+          </Card>
         </div>
       ))}
 
       <ModalBasic
         show={showModal}
         onClose={openCloseModal}
-        title="Detalle de Producto"
+        title="Detalle del Producto"
         size="lg"
       >
         <DetailProductAdmin

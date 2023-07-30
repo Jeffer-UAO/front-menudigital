@@ -1,20 +1,13 @@
 .table-users-admin {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 0fr));
-  margin: 0 60px;
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 0.3fr));
+  gap: 0.5rem;
   text-align: center;
   justify-content: center;
 
   .cart {
     position: relative;
-
-    border-radius: 10px;
-
-    box-shadow: -3px 8px 17px -1px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: -3px 8px 17px -1px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: -3px 8px 17px -1px rgba(0, 0, 0, 0.25);
-    border: solid 1px rgba(255, 255, 255, 0.617);
+    border-radius: 0.5rem;
 
     &:hover {
       box-shadow: 2px 3px 5px rgba(202, 200, 200, 0.4);
@@ -26,37 +19,38 @@
       z-index: 2;
       width: 100%;
       height: 100%;
-      border-radius: 10px;
+      border-radius: 0.5rem;
+      background-color: #2a2e59;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
       text-align: center;
-      padding: 20px;
-      background-color: #110e25;
+    
       & p {
-   //     background-image: linear-gradient(360deg, #471919, #311c13);
-        border-radius: 15px;
-
+        //  background-image: linear-gradient(360deg, #471919, #311c13);
+        border-radius: 0.5rem;
         padding: 5px;
-        color: rgba(255, 255, 255, 0.749) !important;
-        font-weight: bolder;
       }
 
       & h6 {
         font-size: 13px;
         color: #dadada;
-        margin-bottom: 10px;
+        overflow: hidden;
       }
 
       & h4 {
-        font-size: 20px;
-        color: aliceblue;
+        color: #ffffff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: unset;
+        font-weight: 400;
+        margin: 10px 5px;
+        text-transform: capitalize;
       }
 
       & span {
         position: absolute;
-        width: 350px;
-        background-color: yellow;
+        width: 400px;
+        background-color: #f2b63d;
         height: 200px;
         //    background-image: linear-gradient(360deg,#6e2121,#590404);
         transform: rotate(-35deg);
@@ -67,11 +61,10 @@
 
       & .img {
         height: 50%;
-        margin-bottom: 20px;
         & img {
           position: relative;
-          width: 150px;
-          height: 150px;
+          width: 100px;
+          height: 100px;
           border-radius: 50%;
           object-fit: cover;
           box-shadow: 0 0 10px rgba(15, 14, 14, 0.952);
@@ -88,7 +81,7 @@
       gap: 20px;
       background-color: rgb(33, 35, 65);
       border: solid 1px white;
-      
+
       padding: 6px;
       align-items: center;
       right: 10px;

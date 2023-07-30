@@ -43,31 +43,14 @@ export function AddSaucesToProductAdmin(props) {
       {(saucesMini != "") ? (
         <div className="add-sauce-to-product">
           <div className="add-sauce-title" onClick={onChangeStateSauce}>
-            <h6>Elija las salsas</h6>
-
-         {/**
-          * 
-          * <div className="sauce-options">
-              {checkSauces ? (
-                <label>
-                  Todas <GiAbstract030 size={16} color="yellow" />
-                </label>
-              ) : (
-                <label>
-                  Ninguna <GiAbstract031 size={16} color="red" />
-                </label>
-              )}
-            </div>
-
-          */}   
-          
+            <h6>Elija las salsas</h6>          
           </div>
           <div className="add-sauce-to-product__sauces">
             {map(saucesMini, (sauce, index) => (
               <div key={index} className="sauce">
                 {sauce.description}
-                <div className="toggle-button-cover">
-                  <div className="button-cover">
+              
+                  
                     <div className="button r" id="button-3">
                       <input
                         onClick={() => updateSauce(sauce)}
@@ -77,8 +60,8 @@ export function AddSaucesToProductAdmin(props) {
                       />
                       <div className="knobs"></div>
                       <div className="layer"></div>
-                    </div>
-                  </div>
+              
+                 
                 </div>
               </div>
             ))}

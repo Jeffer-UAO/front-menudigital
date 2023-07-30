@@ -7,16 +7,14 @@ import "./TableSaucesAdmin.scss";
 
 export function TableSaucesAdmin(props) {
   const { sauces, updateSauce, deleteSauce } = props;
+  
   return (
     <div className="table-sauces-admin">
       {sauces &&
         map(sauces, (sauce, index) => (
-          <div className="cart" key={index}>
-           
+          <div className="cart" key={index}>           
             <div
-              className="table-sauces-admin__sauce"
-              // onClick={() => updateProduct(product)}
-              //  onClick={() => goToProductDetail(product.id)}
+              className="table-sauces-admin__sauce"           
             >
               <CardBody>
                 <CardSubtitle>{sauce.description}</CardSubtitle>
@@ -39,8 +37,6 @@ export function TableSaucesAdmin(props) {
 
 function Action(props) {
   const { sauce, updateSauce, deleteSauce } = props;
-  //<label onClick={() => addProduct(product.id)}>Agregar al carrito</label>
-  //<label onClick={getSaucesActive}>Agregar al carrito</label>
   return (
     <div className="actions">
       <label onClick={() => updateSauce(sauce)}>Editar</label>

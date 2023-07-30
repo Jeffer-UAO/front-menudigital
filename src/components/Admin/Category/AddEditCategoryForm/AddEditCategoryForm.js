@@ -33,7 +33,7 @@ export function AddEditCategoryForm(props) {
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/jpeg, image/npg, image/jfif",
+    accept: "image/jpeg, image/npg, image/jfif, image/webp",
     noKeyboard: true,
     multiple: false,
     onDrop,

@@ -5,7 +5,7 @@ import { ListProduct } from "../../Product";
 
 import "./ListCategoryAdmin.scss";
 
-import { CardBody, CardImg, CardTitle } from "reactstrap";
+import { CardBody, Card, CardImg, CardTitle } from "reactstrap";
 import { ModalBasic } from "../../../Common/ModalBasic";
 
 export function ListCategoryAdmin(props) {
@@ -23,17 +23,20 @@ export function ListCategoryAdmin(props) {
   const openCloseModal = () => setShowModal((prev) => !prev);
 
   return (
-    <div className="list-categories-client">
+    <div className="admin-category">
       {map(categories, (category, index) => (
         <div
           key={index}
-          className="list-categories-client__category"
+          className="list"
           onClick={() => goToProduct(category)}
         >
+          <Card>
           <CardImg alt="Card image cap" src={category.image} />
           <CardBody>
             <CardTitle>{category.title}</CardTitle>
           </CardBody>
+
+          </Card>
         </div>
       ))}
 

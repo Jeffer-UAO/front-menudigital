@@ -8,8 +8,9 @@ import "./ListProductCarAdmin.scss";
 
 export function ListProductCarAdmin(props) {
   const [total, setTotal] = useState(0);
-  const { products, addSalesman, removeProduct, removeProductAll } = props;
+  const {loading, products, addSalesman, removeProduct, removeProductAll } = props;
 
+  console.log(loading);
   function formatNumber(number) {
     return new Intl.NumberFormat().format(number);
   }
@@ -50,10 +51,16 @@ export function ListProductCarAdmin(props) {
         ))}
       </div>
       <div className="btn-content">
-        
-        <Button color="success" className="btn-send" onClick={() => addSalesman()}>
-          Enviar pedido por: $ {formatNumber(total)}
-        </Button>
+      
+          <Button
+            color="success"
+            className="btn-send"
+            onClick={() => addSalesman()}
+          >
+            Enviar pedido por: $ {formatNumber(total)}
+          </Button>
+       
+
         <div className="btn-send delete" onClick={removeProductAll}>
           Eliminar todo
         </div>

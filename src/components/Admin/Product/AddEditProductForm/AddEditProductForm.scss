@@ -6,8 +6,8 @@
     "header header header"
     "aside main main"
     "footer footer footer";
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
+  // grid-template-columns: auto auto auto;
+  // grid-template-rows: auto auto auto;
 }
 
 .o-header {
@@ -20,8 +20,9 @@
   align-items: center;
 
   .card-img {
-    width: 15rem;
-    height: 12rem;
+   
+    height: 7.7rem;
+    aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center center;
   }
@@ -32,6 +33,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  label{
+    color: rgb(255, 255, 255);
+  }
 }
 
 .o-footer {

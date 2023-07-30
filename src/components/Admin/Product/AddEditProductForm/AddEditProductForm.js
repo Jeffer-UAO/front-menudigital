@@ -184,13 +184,6 @@ export function AddEditProductForm(props) {
               error={formik.errors.price}
             />
 
-            <Select
-              className="input"
-              placeholder={formik.values.category}
-              options={categoriesFormat}
-              onChange={(data) => formik.setFieldValue("category", data.value)}
-              error={formik.errors.category}
-            />
 
             <Button
               className="input"
@@ -202,6 +195,13 @@ export function AddEditProductForm(props) {
             </Button>
           </main>
           <footer className="o-footer">
+            <Select
+              className="input"
+              placeholder={formik.values.category}
+              options={categoriesFormat}
+              onChange={(data) => formik.setFieldValue("category", data.value)}
+              error={formik.errors.category}
+            />
             <Input
               className="input"
               id="description"
@@ -219,7 +219,7 @@ export function AddEditProductForm(props) {
               </Button>
             ) : (
               <Button type="submit" color="success" block>
-                GRABAR
+                GUARDAR
               </Button>
             )}
           </footer>
@@ -229,10 +229,10 @@ export function AddEditProductForm(props) {
       <ModalBasic
         show={showModal}
         onClose={openCloseModal}
-        title={formik.values.title}
-        size="lg"
+        title="salsas +"
+        size="sm"
       >
-        <SauceToProduct
+        <SauceToProduct         
           sauces={sauces}
           saucesOldId={saucesOldId}
           saucesIndex={saucesIndex}

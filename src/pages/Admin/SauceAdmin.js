@@ -75,6 +75,7 @@ export function SauceAdmin() {
           title={titleModal}
           children={contentModal}
           onClose={openCloseModal}
+          size="sm"
         />
       </div>
     </div>

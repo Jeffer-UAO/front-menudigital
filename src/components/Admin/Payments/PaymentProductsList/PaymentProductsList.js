@@ -50,8 +50,9 @@ export function PaymentProductsList(props) {
         </div>
       ))}
       <div className="total">
+        
         <h5>Total</h5>
-        <h5><p>$ {formatNumber(total)}</p></h5>
+        <h5>$ {formatNumber(total)}</h5>
       </div>
     </div>
   );

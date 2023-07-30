@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { map } from "lodash";
 import QRCode from "qrcode.react";
+
 import { ImQrcode } from "react-icons/im";
 import { MdDeleteForever } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
-import { ModalBasic } from "../../../Common";
+import { BsPlusCircle } from "react-icons/bs";
 
 import { ReactComponent as IcTable } from "../../../../assets/table.svg";
+
+import { ModalBasic } from "../../../Common";
+
 import "./TableTablesAdmin.scss";
+import { Button } from "reactstrap";
 
 export function TableTablesAdmin(props) {
-  const { tables, updateTable, onDeleteTable } = props;
+  const { tables, updateTable, onDeleteTable, addTable } = props;
   const [showModal, setShowModal] = useState(false);
   const [contentModal, setContentModal] = useState(null);
 
@@ -29,21 +34,25 @@ export function TableTablesAdmin(props) {
   return (
     <div className="table-table-admin">
       {map(tables, (table, index) => (
-        <main className="table_list" key={index}>
-          <article>
-            {table.name ? <h6>{table.name} </h6> : <p>{table.number}</p>}
-            <IcTable />
-            <>
-              <Action
-                table={table}
-                updateTable={updateTable}
-                onDeleteTable={onDeleteTable}
-                showQr={showQr}
-              />
-            </>
-          </article>
-        </main>
+        <div className="table_list" key={index}>
+          <div className="article">
+            <div className="table">
+              <IcTable />
+              <h6>{table.number}</h6>
+            </div>
+            <Action
+              table={table}
+              updateTable={updateTable}
+              onDeleteTable={onDeleteTable}
+              showQr={showQr}
+            />
+          </div>
+        </div>
       ))}
+
+      <Button className="more" onClick={addTable}>
+        <BsPlusCircle size={35} color="white" />
+      </Button>
 
       <ModalBasic
         show={showModal}
@@ -61,13 +70,13 @@ function Action(props) {
   return (
     <div className="btn-action">
       <label onClick={() => showQr(table)}>
-        <ImQrcode />
+        <ImQrcode size={22} color="white" />
       </label>
       <label onClick={() => updateTable(table)}>
-        <AiOutlineEdit />
+        <AiOutlineEdit size={22} color="white" />
       </label>
       <label onClick={() => onDeleteTable(table)}>
-        <MdDeleteForever />
+        <MdDeleteForever size={22} color="white" />
       </label>
     </div>
   );

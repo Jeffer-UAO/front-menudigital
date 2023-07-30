@@ -20,7 +20,6 @@ import {
   AddSalesman,
 } from "../../components/Admin";
 
-
 export function CardAdmin() {
   const { auth } = useAuth();
   const { deleteAllProducts, deleteProduct } = useCart();
@@ -118,7 +117,7 @@ export function CardAdmin() {
         salesman={salesman}
         setDataOrder={setDataOrder}
         removeProductAll={removeProductAll}
-        onClose={openCloseModal}
+        onClose={openCloseModal}  
       />
     );
     openCloseModal();
@@ -157,6 +156,7 @@ export function CardAdmin() {
             onReloadCard={onReloadCard}
             removeProduct={removeProduct}
             removeProductAll={removeProductAll}
+           
           />
         </div>
       )}

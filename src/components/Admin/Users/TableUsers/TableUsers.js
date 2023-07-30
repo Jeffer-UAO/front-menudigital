@@ -15,16 +15,14 @@ export function TableUsers(props) {
         <div className="cart" key={index}>
           <div className="content">
             <span></span>
+            <h4>{user.first_name} {user.last_name}</h4>
             <div className="img">
               <CardImg
                 src="https://dqv3sy2b96qdv.cloudfront.net/media/W1siZiIsIjIwMTUvMDkvMDQvMTcvMzYvMDIvMzczL25vX3VzZXJfaW1nLnBuZyJdLFsicCIsInRodW1iIiwiNTExeDUxMSsxMSsxMiJdLFsicCIsInRodW1iIiwiMjAweDIwMCJdXQ/15b37310/no-user-img.png"
                 alt="Card image cap"
               />
             </div>
-            <h4>{user.username}</h4>
-            <h6>
-              {user.first_name} {user.last_name}
-            </h6>
+           
             <h6>{user.email}</h6>
             <h6>{user.is_staff ? <p>Administrador</p> : <p>Invitado</p>}</h6>
             <h6>{user.is_active ? <p>Activo</p> : <p>Inactivo</p>}</h6>

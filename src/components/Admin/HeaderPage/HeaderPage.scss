@@ -1,22 +1,19 @@
-
 .button-menu {
   display: flex;
   justify-content: center;
-  background-color: #f2b63d;
+  background-color: #2a2e59;
+
   h6 {
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 1.2rem;
+    margin: 5px;
   }
 }
-
-
-
 
 .header-page-admin {
   display: flex;
   justify-content: space-between;
-  background-color: #f2b63d;
   padding: 0.3rem;
 
   .btn-header-page {
@@ -26,21 +23,28 @@
       display: flex;
       align-items: center;
       font-size: 25px;
-      color: #1f2126;
+     
     }
 
     .my-btn {
+      background-color: #2a2e59;
       display: flex;
       align-items: center;
       text-align: center;
       border-radius: 0.5rem;
       box-shadow: 2px 3px 5px rgba(3, 3, 3, 0.4);
       padding: 0.5rem;
-      border: solid 1px #ffffff;
-      margin: 0.1rem;
-      height: 3rem;
+      margin-right: 5px;
+      transition: all 0.4s ease;
+      border-bottom: solid 1px white;
+
+      color: #f2b63d;
+
       &:hover {
         cursor: pointer;
+        color: #2a2e59;
+        background-color: #f2b63d;
+        box-shadow: 2px 3px 5px rgba(45, 58, 89, 0.878);
       }
     }
   }

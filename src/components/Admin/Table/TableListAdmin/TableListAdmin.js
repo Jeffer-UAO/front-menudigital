@@ -54,7 +54,7 @@ export function TableListAdmin(props) {
           <i className="title">Manual</i>
         </div>
         <div className="table-list-admin__btn_async">
-          <AiOutlineSync size="25" color="red" onClick={onReload} />
+          <AiOutlineSync size="30" onClick={onReload} />
         </div>
       </div>
       <div className="table-list-admin__orders">
